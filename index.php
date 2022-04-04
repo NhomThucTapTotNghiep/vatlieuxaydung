@@ -1,12 +1,11 @@
 <?php 
-    // include './config.php';
-    
+    include 'config.php';
+    include './class/Utilities.php';
     function loadClass($c)
     {
         include "./class/$c.php";
     }
     spl_autoload_register('loadClass');
-    
     $controller = Utilities::get('controller', 'home');
 
 ?>
@@ -20,13 +19,11 @@
         //header
         include  'view/layout/header.php';
 
-        
 
         if($controller=='home')
         {
-            // banner
-            include  'view/body/banner.php';
-
+            
+            
             //body
             include 'Controllers/homeController.php';
         }
