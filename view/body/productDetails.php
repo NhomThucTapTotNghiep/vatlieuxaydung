@@ -5,33 +5,26 @@
         <div class="col-lg-7 col-xl-7">
           <div class="product_slider_img">
             <div id="vertical">
-              <div data-thumb="img/product/single-product/product_1.png">
-                <img src="img/product/single-product/product_1.png" />
-              </div>
-              <div data-thumb="img/product/single-product/product_1.png">
-                <img src="img/product/single-product/product_1.png" />
-              </div>
-              <div data-thumb="img/product/single-product/product_1.png">
-                <img src="img/product/single-product/product_1.png" />
-              </div>
-              <div data-thumb="img/product/single-product/product_1.png">
-                <img src="img/product/single-product/product_1.png" />
+              <div data-thumb="<?php echo IMG_SANPHAM.$chitiet['img']; ?>">
+                <img style="height: 500px;" src="<?php echo IMG_SANPHAM.$chitiet['img']; ?>" />
               </div>
             </div>
           </div>
         </div>
         <div class="col-lg-5 col-xl-4">
           <div class="s_product_text">
-            <h5>previous <span>|</span> next</h5>
-            <h3>Faded SkyBlu Denim Jeans</h3>
-            <h2>$149.99</h2>
+            <h3><?php echo $chitiet['TenVT'] ?></h3>
+            <h2><?php echo $chitiet['DonGia'] ?> VND</h2>
             <ul class="list">
               <li>
-                <a class="active" href="#">
-                  <span>Category</span> : Household</a>
+                <a class="active" href="">
+                  <span>Đơn vị tính: </span> : <?php echo $chitiet['DVTinh'] ?></a>
               </li>
               <li>
-                <a href="#"> <span>Availibility</span> : In Stock</a>
+                <a class="active" href=""> <span>Số lượng</span> : <?php echo $chitiet['SoLuong'] ?></a>
+              </li>
+              <li>
+                <a class="active" href="index.php?controller=products&id=<?php echo $chitiet['MaNSX'] ?>"> <span>Nhà sản xuất</span> : <?php echo $chitiet['TenNSX'] ?></a>
               </li>
             </ul>
             <p>
@@ -468,57 +461,4 @@
   </section>
   <!--================End Product Description Area =================-->
 
-  <!-- product_list part start-->
-  <section class="product_list best_seller">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-12">
-          <div class="section_tittle text-center">
-            <h2>Best Sellers <span>shop</span></h2>
-          </div>
-        </div>
-      </div>
-      <div class="row align-items-center justify-content-between">
-        <div class="col-lg-12">
-          <div class="best_product_slider owl-carousel">
-            <div class="single_product_item">
-              <img src="img/product/product_1.png" alt="">
-              <div class="single_product_text">
-                <h4>Quartz Belt Watch</h4>
-                <h3>$150.00</h3>
-              </div>
-            </div>
-            <div class="single_product_item">
-              <img src="img/product/product_2.png" alt="">
-              <div class="single_product_text">
-                <h4>Quartz Belt Watch</h4>
-                <h3>$150.00</h3>
-              </div>
-            </div>
-            <div class="single_product_item">
-              <img src="img/product/product_3.png" alt="">
-              <div class="single_product_text">
-                <h4>Quartz Belt Watch</h4>
-                <h3>$150.00</h3>
-              </div>
-            </div>
-            <div class="single_product_item">
-              <img src="img/product/product_4.png" alt="">
-              <div class="single_product_text">
-                <h4>Quartz Belt Watch</h4>
-                <h3>$150.00</h3>
-              </div>
-            </div>
-            <div class="single_product_item">
-              <img src="img/product/product_5.png" alt="">
-              <div class="single_product_text">
-                <h4>Quartz Belt Watch</h4>
-                <h3>$150.00</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- product_list part end-->
+  

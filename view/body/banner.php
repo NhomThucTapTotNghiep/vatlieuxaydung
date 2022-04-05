@@ -4,7 +4,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <div class="banner_slider owl-carousel">
-                        <?php  $dem = 1; foreach($dataVatTu as $item) {?>
+                        <?php  $dem = 1; foreach($dataVatTu1 as $item) {?>
                         <div class="single_banner_slider">
                             <div class="row">
                                 <div class="col-lg-5 col-md-8">
@@ -15,8 +15,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="banner_img d-none d-lg-block">
-                                    <img style="height: 350px;" src="<?php echo IMG_SANPHAM.$item['img']; ?>"  alt="">
+                                <div style="padding-right: 100px; padding-bottom: 30px;" class="banner_img d-none d-lg-block">
+                                    <img style="height: 350px; width: 350px;" src="<?php echo IMG_SANPHAM.$item['img']; ?>"  alt="">
                                 </div>
                             </div>
                         </div>

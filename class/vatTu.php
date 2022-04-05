@@ -7,23 +7,21 @@ class vatTu extends Database
 {
     function all()
     {
-        return $this->selectQuery("Select *  from vattu, nhasanxuat WHERE vattu.MaNSX = nhasanxuat.MaNSX");
+        return $this->selectQuery("Select *  from vattu, nhasanxuat WHERE vattu.MaNSX = nhasanxuat.MaNSX ");
     }
 
     function random($n)
     {
-        return $this->selectQuery("select * from , loaisanpham, nhasanxuat
-        where sanpham.maloai = loaisanpham.maloai 
-        and sanpham.mansx = nhasanxuat.mansx order by rand() limit 0, $n");
+        return $this->selectQuery("Select *  from vattu, nhasanxuat
+        WHERE vattu.MaNSX = nhasanxuat.MaNSX 
+        order by rand() limit 0, $n");
     }
 
     function detail($id)
     {
-        return $this->selectQuery("Select * 
-                                        from sanpham, loaisanpham, nhasanxuat
-                                        where sanpham.maloai = loaisanpham.maloai
-                                        and sanpham.mansx = nhasanxuat.mansx
-                                        and sanpham.masp=?", [$id])[0];
+        return $this->selectQuery("Select *  from vattu, nhasanxuat
+                                    WHERE vattu.MaNSX = nhasanxuat.MaNSX
+                                        and vattu.MaVT=?", [$id])[0];
     }
 
     function allGia($min,$max)
@@ -60,10 +58,8 @@ class vatTu extends Database
 
     function allByNSX($mansx)
     {
-        return $this->selectQuery("Select * 
-                                        from sanpham, loaisanpham, nhasanxuat
-                                        where sanpham.maloai = loaisanpham.maloai
-                                        and sanpham.mansx = nhasanxuat.mansx and sanpham.mansx=?",[$mansx]);
+        return $this->selectQuery("Select *  from vattu, nhasanxuat WHERE vattu.MaNSX = nhasanxuat.MaNSX
+                                        and vattu.MaNSX=?", [$mansx]);
     }
 
     function randomByLoai($n,$maloai)

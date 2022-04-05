@@ -14,10 +14,10 @@
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.php?controller=home">Home</a>
+                                    <a class="nav-link" href="index.php">Trang chủ</a>
                                 </li>
 								<li class="nav-item">
-                                    <a class="nav-link" href="index.php?controller=products">Products</a>
+                                    <a class="nav-link" href="index.php?controller=products">Vật tư</a>
                                 </li>
 								<li class="nav-item">
                                     <a class="nav-link" href="#">Nhà sản xuất</a>
@@ -38,8 +38,6 @@
                         </div>
 						<ul>
 							<div style="padding-left:20px" class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
-						
-								
 								<li class ="nav-item dropdown">
 									
 									<?php

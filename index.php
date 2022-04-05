@@ -22,8 +22,7 @@
 
         if($controller=='home')
         {
-            
-            
+
             //body
             include 'Controllers/homeController.php';
         }
@@ -48,6 +47,9 @@
 
         if($controller == 'products'){
             //Show products
+            include 'Controllers/productController.php';
+        }
+        if($controller == 'vattu'){
             include 'Controllers/productController.php';
         }
 

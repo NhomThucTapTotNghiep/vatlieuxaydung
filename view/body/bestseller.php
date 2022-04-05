@@ -4,7 +4,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-12">
                     <div class="section_tittle text-center">
-                        <h2>Best Sellers <span>shop</span></h2>
+                        <h2>Sản phẩm bán chạy</h2>
                     </div>
                 </div>
             </div>
@@ -12,7 +12,7 @@
                 <div class="col-lg-12">
                     <div class="best_product_slider owl-carousel">
                         <?php
-                        for($i =0; $i<5 ;$i++)
+                        foreach($dataVatTu1 as $item) 
                         { 
                             include 'view/items/itemBestSell.php'; 
                         } ?>

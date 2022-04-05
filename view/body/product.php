@@ -6,8 +6,8 @@
                 <div class="col-lg-8">
                     <div class="breadcrumb_iner">
                         <div class="breadcrumb_iner_item">
-                            <h2>Shop Category</h2>
-                            <p>Home <span>-</span> Shop Category</p>
+                            <h2>Vật tư</h2>
+                            <p>Trang chủ <span>-</span> Vật tư</p>
                         </div>
                     </div>
                 </div>
@@ -28,76 +28,11 @@
                             </div>
                             <div class="widgets_inner">
                                 <ul class="list">
-                                    <li>
-                                        <a href="#">Frozen Fish</a>
-                                        <span>(250)</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">Dried Fish</a>
-                                        <span>(250)</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">Fresh Fish</a>
-                                        <span>(250)</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">Meat Alternatives</a>
-                                        <span>(250)</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">Fresh Fish</a>
-                                        <span>(250)</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">Meat Alternatives</a>
-                                        <span>(250)</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">Meat</a>
-                                        <span>(250)</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </aside>
-
-                        <aside class="left_widgets p_filter_widgets">
-                            <div class="l_w_title">
-                                <h3>Product filters</h3>
-                            </div>
-                            <div class="widgets_inner">
-                                <ul class="list">
-                                    <li>
-                                        <a href="#">Apple</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Asus</a>
-                                    </li>
-                                    <li class="active">
-                                        <a href="#">Gionee</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Micromax</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Samsung</a>
-                                    </li>
-                                </ul>
-                                <ul class="list">
-                                    <li>
-                                        <a href="#">Apple</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Asus</a>
-                                    </li>
-                                    <li class="active">
-                                        <a href="#">Gionee</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Micromax</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Samsung</a>
-                                    </li>
+                                    <?php foreach($dataNXS as $item) {?> 
+                                        <li>
+                                            <a href="index.php?controller=products&id=<?php echo $item['MaNSX'] ?>"><?php echo $item['TenNSX'] ?></a>
+                                        </li>
+                                    <?php } ?>  
                                 </ul>
                             </div>
                         </aside>
@@ -126,7 +61,7 @@
                         <div class="col-lg-12">
                             <div class="product_top_bar d-flex justify-content-between align-items-center">
                                 <div class="single_product_menu">
-                                    <p><span>10000 </span> Prodict Found</p>
+                                    <p><span><?php echo count($dataVT);  ?> </span> Prodict Found</p>
                                 </div>
                                 <div class="single_product_menu d-flex">
                                     <h5>short by : </h5>
@@ -159,14 +94,11 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="row align-items-center latest_product_inner">
-                        <?php
-                            for ($x = 0; $x <= 9; $x++) {
-                            
-                                include 'view/items/itemproduct.php';
-                            }
-                        ?>
+                    <?php if(!empty($dataVT))   {?>
+                        <div class="row align-items-center latest_product_inner">
+                        <?php foreach($dataVT as $item) {
+                            include 'view/items/itemproduct.php';
+                        } ?> 
                         <div class="col-lg-12">
                             <div class="pageination">
                                 <nav aria-label="Page navigation example">
@@ -192,6 +124,15 @@
                             </div>
                         </div>
                     </div>
+                    <?php } else {?>
+                        <div class="row align-items-center latest_product_inner">
+                        <blockquote class="blockquote">
+                            <h2 class="mb-0">Chưa có sản phẩm của danh nghiệp này.</h2>
+                            <footer class="blockquote-footer">Hãy thử tìm sản phẩm khác </footer>
+                        </blockquote>
+                        </div>
+                    <?php } ?>                    
+                    
                 </div>
             </div>
         </div>
