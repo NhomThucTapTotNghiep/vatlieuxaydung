@@ -28,7 +28,7 @@
                             <a id="search_1" href="javascript:void(0)"><i class="ti-search"></i></a>
                             <a href="index.php"><i class="ti-heart"></i></a>
                             <!-- cart -->
-                            <a  href="index.php?controller=cart">
+                            <a  href="index.php?action=cart">
                                 <i class="fas fa-cart-plus"></i>
                             </a>
                                 <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">

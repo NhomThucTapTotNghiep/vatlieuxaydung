@@ -16,12 +16,16 @@
             <h3><?php echo $chitiet['TenVT'] ?></h3>
             <h2><?php echo $chitiet['DonGia'] ?> VND</h2>
             <ul class="list">
+                <li>
+                    <a class="active" href="" >
+                      <span>Mã vật tư: </span> :  <?php echo $chitiet['MaVT'] ?></a>
+                </li>
               <li>
                 <a class="active" href="">
                   <span>Đơn vị tính: </span> : <?php echo $chitiet['DVTinh'] ?></a>
               </li>
               <li>
-                <a class="active" href=""> <span>Số lượng</span> : <?php echo $chitiet['SoLuong'] ?></a>
+                <a class="active" href=""> <span>Số lượng</span> : <?php if($chitiet['SoLuong'] >= 0){echo $chitiet['SoLuong'];}  else { echo "Hết hàng"; }?></a>
               </li>
               <li>
                 <a class="active" href="index.php?controller=products&id=<?php echo $chitiet['MaNSX'] ?>"> <span>Nhà sản xuất</span> : <?php echo $chitiet['TenNSX'] ?></a>
@@ -34,10 +38,11 @@
             <div class="card_area d-flex justify-content-between align-items-center">
               <div class="product_count">
                 <span class="inumber-decrement"> <i class="ti-minus"></i></span>
-                <input class="input-number" type="text" value="1" min="0" max="10">
+                <input class="input-number" id="soluong" type="text" value="1" min="1" max="100">
                 <span class="number-increment"> <i class="ti-plus"></i></span>
               </div>
-              <a href="#" class="btn_3">add to cart</a>
+              <input type="button" class="btn_3" onclick="addCart()" value="add to cart">
+              <input class="input-number" id="id" type="text" value="<?php echo $chitiet['MaVT'] ?>" min="0" max="100" hidden>
               <a href="#" class="like_us"> <i class="ti-heart"></i> </a>
             </div>
           </div>

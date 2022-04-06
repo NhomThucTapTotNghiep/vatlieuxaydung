@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     include 'config.php';
     include './class/Utilities.php';
     function loadClass($c)

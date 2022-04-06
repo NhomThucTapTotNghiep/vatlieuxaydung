@@ -31,3 +31,26 @@
     <!-- custom js -->
     <script src="asset/js/custom.js"></script>
     <script src="asset/js/custome.js"></script>
+    <!-- jquery -->
+    <script type="text/javascript">
+        function addCart(){
+            var MaVT = document.getElementById('id').value;
+            var inputVal = document.getElementById("soluong").value;
+            $.ajax({
+                url: 'Controllers/cartComtroller.php?action=add',
+                data:{
+                    mavt: MaVT,
+                    soluong: inputVal
+                },
+                success:function(result){
+                console.log(result.abc);
+                } 
+            })
+        }
+        
+        function getInputValue(){
+            // Lấy số lượng vật tư
+            var inputVal = document.getElementById("soluong").value;
+            return inputVal;
+        }
+    </script>

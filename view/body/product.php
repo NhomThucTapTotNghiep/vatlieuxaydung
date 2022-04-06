@@ -61,7 +61,7 @@
                         <div class="col-lg-12">
                             <div class="product_top_bar d-flex justify-content-between align-items-center">
                                 <div class="single_product_menu">
-                                    <p><span><?php echo count($dataVT);  ?> </span> Prodict Found</p>
+                                    <p><span><?php echo count($dataVT);  ?> </span> Sản phẩm được tìm thấy</p>
                                 </div>
                                 <div class="single_product_menu d-flex">
                                     <h5>short by : </h5>

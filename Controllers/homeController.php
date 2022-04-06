@@ -7,3 +7,6 @@ if($action =='index'){
     include  'view/body/banner.php';
     include 'view/body/mainpage.php';
 }
+if($action =='cart'){
+    include 'view/body/cart.php';
+}

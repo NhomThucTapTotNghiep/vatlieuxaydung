@@ -15,18 +15,20 @@
                         <div class="single_product_list_slider">
                             <div class="row align-items-center justify-content-between">
                                 <?php foreach($dataVatTu1 as $item) {  ?>
-                                <a href="index.php?controller=vattu&action=chitiet&id=<?php echo $item['MaVT']?>">
+                               
                                     <div  class="col-lg-3 col-sm-6">
                                         <div class="single_product_item">
+                                            <a href="index.php?controller=vattu&action=chitiet&id=<?php echo $item['MaVT']?>">
                                             <img style="height: 300px;" src="<?php echo IMG_SANPHAM.$item['img']; ?>" alt="">
+                                            </a>
+                                            
                                             <div class="single_product_text">
                                                 <h4><?php echo $item['TenVT']; ?></h4>
                                                 <h3><?php echo $item['DonGia']; ?> VND / <?php echo $item['DVTinh']; ?></h3>
-                                                <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                                                <a href="index.php?controller=vattu&action=chitiet&id=<?php echo $item['MaVT']?>" class="add_cart">Buy now <i class="ti-heart"></i></a>
                                             </div>
                                         </div>
                                     </div>
-                                </a>
                                 <?php } ?>
                             </div>
                         </div>
@@ -40,14 +42,14 @@
                                             <div class="single_product_text">
                                                 <h4><?php echo $item['TenVT']; ?></h4>
                                                 <h3><?php echo $item['DonGia']; ?> VND / <?php echo $item['DVTinh']; ?></h3>
-                                                <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                                                <a href="index.php?controller=vattu&action=chitiet&id=<?php echo $item['MaVT']?>" class="add_cart">Buy now <i class="ti-heart"></i></a>
                                             </div>
                                         </div>
                                     </div>
                                 </a>
                                 <?php } ?>
                             </div>
-                        </div>
+                        </div> 
                     </div>
                 </div>
             </div>
