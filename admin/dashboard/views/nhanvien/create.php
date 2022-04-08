@@ -11,7 +11,7 @@
                 <a href="dashboard.php?controller=vattu">Danh sách vật tư</a>
             </li>
             <li class="breadcrumb-item">
-                <a href="dashboard.php?controller=vattu&action=update">Cập nhật vật tư</a>
+                <a href="dashboard.php?controller=vattu&action=add">Thêm vật tư</a>
             </li>
         </ol>
     </nav>
@@ -23,13 +23,13 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
                 </path>
             </svg>
-            Cập nhật vật tư
+            Thêm vật tư
         </a>
     </div>
 </div>
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h4 class="mt-2 font-weight-bold text-primary float-left">Cập nhật vật tư</h6>
+        <h4 class="mt-2 font-weight-bold text-primary float-left">Thêm vật tư </h6>
     </div>
     <div class="row">
         <div class="col-12 mb-4 mx-auto">
@@ -91,7 +91,7 @@
                             </div>
                             <img id="holder" style="margin-top:15px;max-height:100px;">
                             <!-- <span class="text-danger">{{ $message }}</span> -->
-                        </div> 
+                        </div>
                         <div class="form-group my-3">
                             <button class="btn btn-success text-white" type="submit">Cập nhật</button>
                             <button type="reset" class="btn btn-warning text-white">Xoá</button>
