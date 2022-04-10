@@ -15,10 +15,10 @@
 
 <body>
 
-    <?php include'layout//sidebar.php'; ?>
+    <?php include 'layout/sidebar.php'; ?>
 
     <main class="content">
-        <?php include'layout/header.php'; 
+        <?php include 'layout/header.php'; 
         
         if($controller == 'home'){
           include '../Controllers/adminController.php';
