@@ -11,14 +11,14 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<?php include'layout/head.php'; ?>
+ <?php include'layout/head.php'; ?>
 
 <body>
 
     <?php include'layout//sidebar.php'; ?>
 
     <main class="content">
-        <?php include'layout//header.php'; 
+        <?php include'layout/header.php'; 
         
         if($controller == 'home'){
           include '../Controllers/adminController.php';
@@ -48,13 +48,9 @@
         if($controller =='taikhoan'){
             include '../Controllers/taiKhoanControllers.php';
         }
-
-        
-        include 'layout/footer.php' ?>
+        include 'layout/footer.php'; ?>
     </main>
-    <?php include 'layout/scripts.php' ?>
-
-
+    <?php include 'layout/scripts.php';?>
 </body>
-
+    
 </html>

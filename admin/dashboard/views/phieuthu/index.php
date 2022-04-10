@@ -9,6 +9,7 @@
         'sold' => 'Nhà sản xuất',
         ];
 ?>
+
 <div class="py-4">
     <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
         <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
@@ -53,7 +54,7 @@
                 </thead>
                 <tbody>
                     <?php
-                    for($i=0; $i <10; $i++)
+                    for($i=0; $i <=20; $i++)
                     {
                         ?>
                     <tr>
@@ -72,11 +73,12 @@
                             <span class="badge badge-sm bg-success ms-1">Hiển thị</span>
                             <span class="badge badge-sm bg-warning ms-1">Ẩn</span>
                         </td> -->
-                        <td class="col-sm-1" style="height: 100px;">
+                        <td class="col-sm-1">
                             <div class="d-flex justify-content-center align-items-center">
                                 <a href="" class="btn btn-primary btn-sm float-left btn-circle" data-toggle="tooltip"
                                     title="Xem" data-placement="bottom"><i class="fas fa-info-circle"></i></a>
-                                <a href="dashboard.php?controller=vattu&action=update" class="btn btn-warning btn-sm float-left mx-2 btn-circle text-white"
+                                <a href="dashboard.php?controller=vattu&action=update"
+                                    class="btn btn-warning btn-sm float-left mx-2 btn-circle text-white"
                                     data-toggle="tooltip" title="Sửa" data-placement="bottom"><i
                                         class="fas fa-edit"></i></a>
                                 <form method="POST" action="">

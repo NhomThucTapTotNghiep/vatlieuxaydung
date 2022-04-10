@@ -1,12 +1,15 @@
 <?php 
     $columns = [
         'id' => 'Mã',
-        'ten' => 'Tên khách hàng',
-        'gioitinh' => 'Giới tính',
-        'diachi' => 'Địa chỉ',
-        'ghichu' => 'Ghi chú',
+        'images' => 'Tên vật tư',
+        'title' => 'Hình ảnh',
+        'category' => 'Đơn Vị tính',
+        'price' => 'Đơn giá',
+        'quantity' => 'Số Lượng',
+        'sold' => 'Nhà sản xuất',
         ];
 ?>
+
 <div class="py-4">
     <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
         <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
@@ -51,25 +54,31 @@
                 </thead>
                 <tbody>
                     <?php
-                    for($i=0; $i <10; $i++)
+                    for($i=0; $i <=20; $i++)
                     {
                         ?>
                     <tr>
                         <td><?php echo $i; ?></td>
-                        <td> Tên khách hàng</td>
-                        <td>Giới tính</td>
-                        <td>Địa chỉ</td>
-                        <td>Ghi Chú</td>
+                        <td> Tên vật tư</td>
+                        <td>
+                            <img src="#" class="img-fluid" style="max-width:80px" alt="">
+                        </td>
+
+                        <td>Đơn vị tính</td>
+                        <td>Giá</td>
+                        <td> Số lượng</td>
+                        <td>Nhà sản xuất</td>
                         <!-- <td>
                             @if ($product->status == 'active')
                             <span class="badge badge-sm bg-success ms-1">Hiển thị</span>
                             <span class="badge badge-sm bg-warning ms-1">Ẩn</span>
                         </td> -->
-                        <td class="col-sm-1" style="height: 100px;">
+                        <td class="col-sm-1">
                             <div class="d-flex justify-content-center align-items-center">
                                 <a href="" class="btn btn-primary btn-sm float-left btn-circle" data-toggle="tooltip"
                                     title="Xem" data-placement="bottom"><i class="fas fa-info-circle"></i></a>
-                                <a href="dashboard.php?controller=vattu&action=update" class="btn btn-warning btn-sm float-left mx-2 btn-circle text-white"
+                                <a href="dashboard.php?controller=vattu&action=update"
+                                    class="btn btn-warning btn-sm float-left mx-2 btn-circle text-white"
                                     data-toggle="tooltip" title="Sửa" data-placement="bottom"><i
                                         class="fas fa-edit"></i></a>
                                 <form method="POST" action="">
