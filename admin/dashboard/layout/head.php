@@ -28,5 +28,5 @@
 
   <!-- Volt CSS -->
   <link type="text/css" href="../assets/css/volt.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css">
+  <link type="text/css" href="../assets/css/custom.css" rel="stylesheet">
 </head>

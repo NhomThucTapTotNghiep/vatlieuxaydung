@@ -1,11 +1,11 @@
-$(document).ready(function () {
+$(document).ready(function() {
     $.ajaxSetup({
         headers: {
             "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
         },
     });
 
-    $(document).on("click", ".btnDelete", function (e) {
+    $(document).on("click", ".btnDelete", function(e) {
         const form = $(this).closest("form");
         e.preventDefault();
         Swal.fire({
@@ -25,7 +25,7 @@ $(document).ready(function () {
     });
 
     // Auto close flash message;
-    setTimeout(function () {
+    setTimeout(function() {
         $(".alert").slideUp();
     }, 4000);
 
@@ -34,21 +34,20 @@ $(document).ready(function () {
         new simpleDatatables.DataTable(dataTableEl, {
             labels: {
                 placeholder: "Tìm kiếm...",
-                perPage: "{select} mục trên mỗi trang",
+                perPage: "{select}  mục trên mỗi trang",
                 noRows: "Danh sách trống",
-                noResults:
-                    "Không có kết quả nào phù hợp với truy vấn tìm kiếm của bạn",
+                noResults: "Không có kết quả nào phù hợp với truy vấn tìm kiếm của bạn",
                 info: "Hiển thị {start} - {end} trong tổng {rows} dòng", //
             },
         });
     }
 
-    $("#inputProvince").change(function () {
+    $("#inputProvince").change(function() {
         const id = $(this).find("option:selected").val();
         $.ajax({
             type: "get",
             url: `${window.location.origin}/address/districts/${id}`,
-            success: function (data) {
+            success: function(data) {
                 const { districts } = data;
                 const districtSelect = $("#inputDistrict");
                 districtSelect.empty();
@@ -68,7 +67,7 @@ $(document).ready(function () {
                     );
                 });
             },
-            error: function (error) {
+            error: function(error) {
                 if (error.status === 401) {
                     window.location.href = "/login";
                     return;
@@ -82,12 +81,12 @@ $(document).ready(function () {
         });
     });
 
-    $("#inputDistrict").change(function () {
+    $("#inputDistrict").change(function() {
         const id = $(this).find("option:selected").val();
         $.ajax({
             type: "get",
             url: `${window.location.origin}/address/wards/${id}`,
-            success: function (data) {
+            success: function(data) {
                 const { wards } = data;
                 const wardSelect = $("#inputWard");
                 wardSelect.empty();
@@ -99,7 +98,7 @@ $(document).ready(function () {
                     );
                 });
             },
-            error: function (error) {
+            error: function(error) {
                 if (error.status === 401) {
                     window.location.href = "/login";
                     return;
