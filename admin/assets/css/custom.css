@@ -146,19 +146,19 @@
     width: 0;
     position: absolute;
     right: 4px;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
+    border-left: none;
+    border-right: none;
     opacity: 0.2;
 }
 
 .dataTable-sorter::before {
-    border-top: 4px solid #000;
+    border-top: noce;
     bottom: 0px;
 }
 
 .dataTable-sorter::after {
-    border-bottom: 4px solid #000;
-    border-top: 4px solid transparent;
+    border-bottom: none;
+    border-top: none;
     top: 0px;
 }
 
@@ -176,4 +176,12 @@
     clear: both;
     content: " ";
     display: table;
+}
+
+.messagecheck {
+    border-color: #E11D48;
+    padding-right: calc(1.5em + 1rem);
+    /* background-repeat: no-repeat; */
+    /* background-position: right calc(0.375em + 0.25rem) center;
+    background-size: calc(0.75em + 0.5rem) calc(0.75em + 0.5rem); */
 }

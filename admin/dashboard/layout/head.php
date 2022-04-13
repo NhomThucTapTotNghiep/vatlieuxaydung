@@ -29,4 +29,6 @@
   <!-- Volt CSS -->
   <link type="text/css" href="../assets/css/volt.css" rel="stylesheet">
   <link type="text/css" href="../assets/css/custom.css" rel="stylesheet">
+  <link type="text/css" href="../assets/vendor/bootstrap-5.0.2/dist/css/bootstrap.min.css">
+  <link type="text/css" href="../assets/vendor/bootstrap-5.0.2/dist/js/bootstrap.min.css">
 </head>

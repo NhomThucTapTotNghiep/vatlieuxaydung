@@ -4,7 +4,7 @@
     include '../class/Utilities.php';
     function loadClass($c)
     {
-        include "./class/$c.php";
+        include "../class/$c.php";
     }
     spl_autoload_register('loadClass');
     $controller = Utilities::get('controller', 'home');
