@@ -1,5 +1,5 @@
 <?php 
-
+    if(!isset($_SESSION)) session_start();
     include '../configAdmin.php';
     include '../class/Utilities.php';
     function loadClass($c)
@@ -7,11 +7,25 @@
         include "../class/$c.php";
     }
     spl_autoload_register('loadClass');
+    $quantri = new Quantri();
+    $_SESSION['test'] = $_SESSION['quantri'];
+    // print_r($_SESSION['quantri']);
+    
+    // print_r($_SESSION['test']);
+    if (!isset($_SESSION['quantri']))
+    {
+        ?>
+<script>
+window.location = '../index.php';
+</script>
+<?php
+    }
+    
     $controller = Utilities::get('controller', 'home');
 ?>
 <!DOCTYPE html>
 <html lang="en">
- <?php include'layout/head.php'; ?>
+<?php include'layout/head.php'; ?>
 
 <body>
 
@@ -23,6 +37,10 @@
         if($controller == 'home'){
           include '../Controllers/adminController.php';
           // include '../body/quanly.php';
+        }
+        if($controller == 'login'){
+            include '../Controllers/login.php';
+            // include '../body/quanly.php';
         }
         if($controller =='ddh'){
             include '../Controllers/donDHController.php';
@@ -52,5 +70,5 @@
     </main>
     <?php include 'layout/scripts.php';?>
 </body>
-    
+
 </html>

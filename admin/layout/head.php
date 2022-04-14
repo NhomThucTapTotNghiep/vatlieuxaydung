@@ -1,7 +1,7 @@
 <head> 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- Primary Meta Tags -->
-<title>Volt Premium Bootstrap Dashboard - Sign in page</title>
+<title>Đăng nhập</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="title" content="Volt Premium Bootstrap Dashboard - Sign in page">
 <meta name="author" content="Themesberg">
@@ -11,8 +11,8 @@
 
 <!-- Favicon -->
 <link rel="apple-touch-icon" sizes="120x120" href="../asset/img/logo.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../asset/img/logo.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../asset/img/logo.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../asset/img/logo.png">
 <link rel="manifest" href="assets/img/favicon/site.webmanifest">
 <link rel="mask-icon" href="assets/img/favicon/safari-pinned-tab.svg" color="#ffffff">
 <meta name="msapplication-TileColor" content="#ffffff">
