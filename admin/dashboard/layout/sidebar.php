@@ -18,8 +18,8 @@
             class="user-card d-flex d-md-none align-items-center justify-content-between justify-content-md-center pb-4">
             <div class="d-flex align-items-center">
                 <div class="avatar-lg me-4">
-                    <img src="../assets/img/team/profile-picture-1.jpg"
-                        class="card-img-top rounded-circle border-white" alt="">
+                    <img src="../assets/img/team/profile-picture-1.jpg" class="card-img-top rounded-circle border-white"
+                        alt="">
                 </div>
                 <div class="d-block">
                     <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#logoutModal"
@@ -103,6 +103,18 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a href="dashboard.php?controller=ddh" class="nav-link">
+                    <span class="sidebar-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-xs me-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </span>
+                    <span class="sidebar-text">Hoá đơn</span>
+                </a>
+            </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
 

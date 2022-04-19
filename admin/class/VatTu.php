@@ -3,25 +3,25 @@ if (!defined('HOST')) {
     exit;
 }
 
-class khachHang extends Database
+class vatTu extends Database
 {
-    function allKhachHang()
+    function allVatTu()
     {
-        return $this->selectQuery("Select *  from khachhang");
+        return $this->selectQuery("SELECT * FROM vattu, nhasanxuat WHERE vattu.MaNSX = nhasanxuat.MaNSX");
     }
-    function sdtKhachHang($MaKH){
-        return $this->selectQuery("Select SDT  from sdt_khachhang where sdt_khachhang.MaKH =?", [$MaKH]);
+    function layNSX($id){
+        return $this->selectQuery("Select MaVT  from vattu where vattu.MaVT =?", [$id]);
     }
-    function laymakh($sdt){
-        return $this->selectQuery("Select MaKH  from sdt_khachhang where sdt_khachhang.SDT =?", [$sdt]);
+    function allNSX(){
+        return $this->selectQuery("SELECT MaNSX, TenNSX FROM nhasanxuat");
     }
 
 
     //them
-    function themKH($makh, $tenkh, $gioitinh, $diachi, $ghichu){
-        $sql_them = "INSERT INTO `khachhang`(`MaKH`, `TenKH`, `GioiTinh`, `DiaChi`, `GhiChu`) 
-                    VALUES (?,?,?,?,?)";
-        return $this->updateQuery($sql_them, [$makh, $tenkh, $gioitinh, $diachi, $ghichu]);
+    function themVT($makh, $tenvt, $img, $donvt, $dongia, $soluong, $mansx){
+        $sql_them = "INSERT INTO `vattu`(`MaVT`, `TenVT`, `img`, `DVTinh`, `DonGia`, `SoLuong`, `MaNSX`) 
+                        VALUES (?, ?, ?, ?, ?, ?, ?)";
+        return $this->updateQuery($sql_them, [$makh, $tenvt, $img, $donvt, $dongia, $soluong, $mansx]);
     }
     function themSDT($makh, $sdt){
         $sql_them = "INSERT INTO `sdt_khachhang`(`MaKH`, `SDT`) 
@@ -30,36 +30,41 @@ class khachHang extends Database
     }
 
     //sua
-    function suaKH($makh, $tenkh, $gioitinh, $diachi, $ghichu){
-        $sql_sua = "UPDATE `khachhang` SET TenKH=?,GioiTinh=?,DiaChi=?,GhiChu=? WHERE MaKH =?";
-        return $this->updateQuery($sql_sua, [$tenkh, $gioitinh, $diachi, $ghichu, $makh]);
+    function suaVT($mavt, $tenvt, $img, $dvtinh, $gia, $soluong, $mansx){
+        $sql_sua = "UPDATE `vattu` SET `TenVT`=?,`img`=?,`DVTinh`=?,`DonGia`=?,`SoLuong`=?,`MaNSX`=?
+                    WHERE MaVT =?";
+        return $this->updateQuery($sql_sua, [$tenvt, $img, $dvtinh, $gia, $soluong, $mansx, $mavt]);
     }
-    function suaSDT($makh, $sdt){
-        $sql_sua = "INSERT INTO `sdt_khachhang`(`MaKH`, `SDT`) 
-        VALUES (?,?)";
-        return $this->updateQuery($sql_sua, [$makh, $sdt]);
+    function suaVTkhongHinh($mavt, $tenvt, $dvtinh, $gia, $soluong, $mansx){
+        $sql_sua = "UPDATE `vattu` SET `TenVT`=?,`DVTinh`=?,`DonGia`=?,`SoLuong`=?,`MaNSX`=?
+                    WHERE MaVT =?";
+        return $this->updateQuery($sql_sua, [$tenvt, $dvtinh, $gia, $soluong, $mansx, $mavt]);
     }
 
+
     //xoa
-    function xoaKH($id)
+    function xoaVT($id)
     {
-        return $this->updateQuery("DELETE FROM `khachhang` WHERE khachhang.MaKH = ?", [$id]);
-    }
-    function xoaSDTKH($id)
-    {
-        return $this->updateQuery("DELETE FROM `sdt_khachhang` WHERE sdt_khachhang.MaKH = ?", [$id]);
-    }
-    function xoaSDT($sdt, $makh)
-    {
-         return $this->updateQuery("DELETE FROM `sdt_khachhang` WHERE sdt_khachhang.SDT = ? and MaKH = ?", [$sdt, $makh]);
+        return $this->updateQuery("DELETE FROM `vattu` WHERE vattu.MaVT = ?", [$id]);
     }
     
+    //check 
+    function checkinf($id)
+    {
+        return $this->selectQuery("Select *  from ct_banhang
+                                    WHERE MaVT = ?", [$id]);
+    }
 
     //chi tiet
     function detail($id)
     {
-        return $this->selectQuery("Select *  from khachhang
-                                    WHERE khachhang.MaKH = ?", [$id]);
+        return $this->selectQuery("Select *  from vattu
+                                    WHERE MaVT = ?", [$id]);
+    }
+    function detailNSX($id)
+    {
+        return $this->selectQuery("Select *  from nhasanxuat
+                                    WHERE MaNSX = ?", [$id]);
     }
 
 }

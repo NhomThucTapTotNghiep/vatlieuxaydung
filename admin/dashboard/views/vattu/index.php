@@ -6,7 +6,8 @@
         'category' => 'Đơn Vị tính',
         'price' => 'Đơn giá',
         'quantity' => 'Số Lượng',
-        'sold' => 'Nhà sản xuất',
+        'nhasanxuat' => 'Nhà sản xuất',
+        'chinhsua' => 'Chỉnh sửa'
         ];
 ?>
 
@@ -54,20 +55,20 @@
                 </thead>
                 <tbody>
                     <?php
-                    for($i=0; $i <=20; $i++)
+                    foreach($dataVT as $item)
                     {
                         ?>
                     <tr>
-                        <td><?php echo $i; ?></td>
-                        <td> Tên vật tư</td>
+                        <td><?php echo $item['MaVT'] ?></td>
+                        <td><?php echo $item['TenVT'] ?></td>
                         <td>
-                            <img src="#" class="img-fluid" style="max-width:80px" alt="">
+                            <img src="<?php echo IMG_SANPHAM.$item['img'] ?>" class="img-fluid" style="max-width:80px" alt="">
                         </td>
 
-                        <td>Đơn vị tính</td>
-                        <td>Giá</td>
-                        <td> Số lượng</td>
-                        <td>Nhà sản xuất</td>
+                        <td><?php echo $item['DVTinh'] ?></td>
+                        <td><?php echo $item['DonGia'] ?></td>
+                        <td><?php echo $item['SoLuong'] ?></td>
+                        <td><?php echo $item['TenNSX'] ?></td>
                         <!-- <td>
                             @if ($product->status == 'active')
                             <span class="badge badge-sm bg-success ms-1">Hiển thị</span>
@@ -75,17 +76,19 @@
                         </td> -->
                         <td class="col-sm-1">
                             <div class="d-flex justify-content-center align-items-center">
-                                <a href="" class="btn btn-primary btn-sm float-left btn-circle" data-toggle="tooltip"
+                                <a href="dashboard.php?controller=vattu&action=xem&id=<?php echo $item['MaVT'] ?>" class="btn btn-primary btn-sm float-left btn-circle" data-toggle="tooltip"
                                     title="Xem" data-placement="bottom"><i class="fas fa-info-circle"></i></a>
-                                <a href="dashboard.php?controller=vattu&action=update"
+                                <a href="dashboard.php?controller=vattu&action=update&id=<?php echo $item['MaVT'] ?>"
                                     class="btn btn-warning btn-sm float-left mx-2 btn-circle text-white"
                                     data-toggle="tooltip" title="Sửa" data-placement="bottom"><i
                                         class="fas fa-edit"></i></a>
-                                <form method="POST" action="">
+                                <form method="POST" action="dashboard.php?controller=vattu&action=delete">
                                     <button type="button" class="btn btn-danger btn-sm btn-circle btnDelete" data-id=""
                                         data-toggle="tooltip" data-placement="bottom" title="Xoá">
                                         <i class="fas fa-trash"></i>
                                     </button>
+                                    <input type="text" id="mavt" name="mavt" value="<?php echo $item['MaVT']; ?>" hidden>
+                                    <input type="text" id="img" name="img" value="<?php echo $item['img']; ?>" hidden>
                                 </form>
                             </div>
                         </td>
