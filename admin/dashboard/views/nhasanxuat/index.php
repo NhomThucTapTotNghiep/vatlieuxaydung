@@ -1,12 +1,9 @@
 <?php 
     $columns = [
         'id' => 'Mã',
-        'images' => 'Tên vật tư',
-        'title' => 'Hình ảnh',
-        'category' => 'Đơn Vị tính',
-        'price' => 'Đơn giá',
-        'quantity' => 'Số Lượng',
-        'sold' => 'Nhà sản xuất',
+        'title' => 'Tên nha san xuat',
+        'address' => 'Đia Chi',
+        "option" => "Tùy chọn"
         ];
 ?>
 
@@ -20,25 +17,25 @@
                         </path>
                     </svg></a></li>
             <li class="breadcrumb-item">
-                <a href="dashboard.php?controller=vattu">Danh sách vật tư</a>
+                <a href="dashboard.php?controller=vattu">Danh sách nha san xuat</a>
             </li>
         </ol>
     </nav>
     <div class="dropdown">
-        <a href='dashboard.php?controller=vattu&action=add'
+        <a href='dashboard.php?controller=nsx&action=add'
             class="btn btn-gray-800 d-inline-flex align-items-center me-2" aria-haspopup="true" aria-expanded="false">
             <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
                 </path>
             </svg>
-            Thêm vật tư
+            Thêm nha san xuat
         </a>
     </div>
 </div>
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="mt-2 font-weight-bold text-primary float-left">Danh sách vật tư</h6>
+        <h6 class="mt-2 font-weight-bold text-primary float-left">Danh sách nha san xuat</h6>
     </div>
 
     <div class="card-body">
@@ -53,21 +50,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
-                    for($i=0; $i <=20; $i++)
+                <?php
+                    foreach($dataNSX as $item)
                     {
                         ?>
                     <tr>
-                        <td><?php echo $i; ?></td>
-                        <td> Tên vật tư</td>
-                        <td>
-                            <img src="#" class="img-fluid" style="max-width:80px" alt="">
-                        </td>
+                        <td><?php echo $item['MaNSX']; ?></td>
+                        <td><?php echo $item['TenNSX'] ?></td>
 
-                        <td>Đơn vị tính</td>
-                        <td>Giá</td>
-                        <td> Số lượng</td>
-                        <td>Nhà sản xuất</td>
+                        <td style="width:100px"><?php echo $item['DiaChi'] ?></td>
                         <!-- <td>
                             @if ($product->status == 'active')
                             <span class="badge badge-sm bg-success ms-1">Hiển thị</span>
@@ -75,17 +66,18 @@
                         </td> -->
                         <td class="col-sm-1">
                             <div class="d-flex justify-content-center align-items-center">
-                                <a href="" class="btn btn-primary btn-sm float-left btn-circle" data-toggle="tooltip"
+                                <a href="dashboard.php?controller=nsx&action=xem&id=<?php echo $item['MaNSX']; ?>" class="btn btn-primary btn-sm float-left btn-circle" data-toggle="tooltip"
                                     title="Xem" data-placement="bottom"><i class="fas fa-info-circle"></i></a>
-                                <a href="dashboard.php?controller=vattu&action=update"
+                                <a href="dashboard.php?controller=nsx&action=update&id=<?php echo $item['MaNSX']; ?>"
                                     class="btn btn-warning btn-sm float-left mx-2 btn-circle text-white"
                                     data-toggle="tooltip" title="Sửa" data-placement="bottom"><i
                                         class="fas fa-edit"></i></a>
-                                <form method="POST" action="">
+                                <form method="POST" action="dashboard.php?controller=nsx&action=delete">
                                     <button type="button" class="btn btn-danger btn-sm btn-circle btnDelete" data-id=""
                                         data-toggle="tooltip" data-placement="bottom" title="Xoá">
                                         <i class="fas fa-trash"></i>
                                     </button>
+                                    <input type="text" id="maNSX" name="maNSX" value="<?php echo $item['MaNSX']; ?>" hidden>
                                 </form>
                             </div>
                         </td>

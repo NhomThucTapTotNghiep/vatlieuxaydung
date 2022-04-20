@@ -8,24 +8,24 @@
     }
     spl_autoload_register('loadClass');
     $quantri = new Quantri();
-    $_SESSION['test'] = $_SESSION['quantri'];
+    //$_SESSION['test'] = $_SESSION['quantri'];
     // print_r($_SESSION['quantri']);
     
     // print_r($_SESSION['test']);
     if (!isset($_SESSION['quantri']))
     {
         ?>
-<script>
-window.location = '../index.php';
-</script>
-<?php
+        <script>
+        window.location = '../index.php';
+        </script>
+        <?php
     }
     
     $controller = Utilities::get('controller', 'home');
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<?php include'layout/head.php'; ?>
+<?php include 'layout/head.php'; ?>
 
 <body>
 
