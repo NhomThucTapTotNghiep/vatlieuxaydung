@@ -67,4 +67,6 @@ class vatTu extends Database
                                     WHERE MaNSX = ?", [$id]);
     }
 
+    
+
 }

@@ -1,6 +1,7 @@
 <?php 
 $action=Utilities::get('action', 'index');
 $id=Utilities::get('id', '');
+$message='';
 $vattu = new vatTu();
 if($action =='index'){
     $dataVT = $vattu->allVatTu();
@@ -75,13 +76,11 @@ if ($action == 'delete'){
         $message = $vattu->xoaVT($id);
         unlink(IMG_SANPHAM.$img);
         $dataVT = $vattu->allVatTu();
-        include '../dashboard/views/vattu/index.php';
     }
     else{
         $dataVT = $vattu->allVatTu();
         $message ='Có liên kết không thể xóa';
-        include '../dashboard/alert/alert.php';
-        echo '<script type="text/javascript">alert();</script>';
+        // include '../dashboard/alert/alert.php';
         include '../dashboard/views/vattu/index.php';
     }
 }

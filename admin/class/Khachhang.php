@@ -61,5 +61,16 @@ class khachHang extends Database
         return $this->selectQuery("Select *  from khachhang
                                     WHERE khachhang.MaKH = ?", [$id]);
     }
+    //Check inf
+    function checkINfDDH($id)
+    {
+        return $this->selectQuery("Select *  from dondathang
+                                    WHERE MaKH = ?", [$id]);
+    }
+    function checkINfHD($id)
+    {
+        return $this->selectQuery("Select *  from hoadon
+                                    WHERE MaKH = ?", [$id]);
+    }
 
 }

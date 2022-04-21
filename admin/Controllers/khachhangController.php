@@ -80,10 +80,24 @@ if($action =='updatekh'){
 }
 if($action =='delete'){
     $makh = Utilities::post('makh','');
-    $message1=$khachhang->xoaSDTKH($makh);
-    $message2=$khachhang->xoaKH($makh);
-    $dataKH = $khachhang->allKhachHang();
-    include '../dashboard/views/khachhang/index.php';
+
+    if(!empty($khachhang->checkINfDDH($makh))){
+        $message = 'Có ràng buộc với đơn đặt hàng';
+        $dataKH = $khachhang->allKhachHang();
+        include '../dashboard/views/khachhang/index.php';
+    }
+    else if(!empty($khachhang->checkINfHD($makh))){
+        $message = 'Có ràng buộc với hóa đơn';
+        $dataKH = $khachhang->allKhachHang();
+        include '../dashboard/views/khachhang/index.php';
+    }
+    else{
+        $message1=$khachhang->xoaSDTKH($makh);
+        $message2=$khachhang->xoaKH($makh);
+        $dataKH = $khachhang->allKhachHang();
+        include '../dashboard/views/khachhang/index.php';
+        
+    }
 }
 if($action =='deletesdt'){
     $sdt = Utilities::post('sdtkh','');

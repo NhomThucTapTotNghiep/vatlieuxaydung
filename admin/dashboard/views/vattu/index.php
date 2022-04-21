@@ -104,3 +104,9 @@
 
     </div>
 </div>
+<?php  
+    include '../dashboard/alert/alert.php'; 
+    if(!empty($message)){
+        echo '<script type="text/javascript">alert();</script>';
+    } 
+?>
