@@ -1,15 +1,3 @@
-<?php 
-    $columns = [
-        'id' => 'Mã',
-        'images' => 'Tên vật tư',
-        'title' => 'Hình ảnh',
-        'category' => 'Đơn Vị tính',
-        'price' => 'Đơn giá',
-        'quantity' => 'Số Lượng',
-        'sold' => 'Nhà sản xuất',
-        ];
-?>
-
 <div class="py-4">
     <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
         <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
@@ -43,55 +31,22 @@
 
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered" width="100%" cellspacing="0" id="datatable">
-                <thead class="thead-light">
+            <table class="table table-bordered" id="datatable" width="100%" cellspacing="0">
+                <thead>
                     <tr>
-                        <?php
-                        foreach($columns as $column){ 
-                        echo  '<th>'.$column.'</th>';
-                        }?>
+                        <th>Mã đơn đặt hàng</th>
+                        <th>Mã khách hàng</th>
+                        <th>Mã nhân viên</th>
+                        <th>Ngày lập đơn</th>
+                        <th>Ngày giao hàng</th>
+                        <th>Thành tiền</th>
+                        <th>Trạng thái</th>
+                        <th>VAT</th>
+                        <th>Công nợ</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
-                    for($i=0; $i <=20; $i++)
-                    {
-                        ?>
-                    <tr>
-                        <td><?php echo $i; ?></td>
-                        <td> Tên vật tư</td>
-                        <td>
-                            <img src="#" class="img-fluid" style="max-width:80px" alt="">
-                        </td>
 
-                        <td>Đơn vị tính</td>
-                        <td>Giá</td>
-                        <td> Số lượng</td>
-                        <td>Nhà sản xuất</td>
-                        <!-- <td>
-                            @if ($product->status == 'active')
-                            <span class="badge badge-sm bg-success ms-1">Hiển thị</span>
-                            <span class="badge badge-sm bg-warning ms-1">Ẩn</span>
-                        </td> -->
-                        <td class="col-sm-1">
-                            <div class="d-flex justify-content-center align-items-center">
-                                <a href="" class="btn btn-primary btn-sm float-left btn-circle" data-toggle="tooltip"
-                                    title="Xem" data-placement="bottom"><i class="fas fa-info-circle"></i></a>
-                                <a href="dashboard.php?controller=vattu&action=update"
-                                    class="btn btn-warning btn-sm float-left mx-2 btn-circle text-white"
-                                    data-toggle="tooltip" title="Sửa" data-placement="bottom"><i
-                                        class="fas fa-edit"></i></a>
-                                <form method="POST" action="">
-                                    <button type="button" class="btn btn-danger btn-sm btn-circle btnDelete" data-id=""
-                                        data-toggle="tooltip" data-placement="bottom" title="Xoá">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </form>
-                            </div>
-                        </td>
-                    </tr>
-                    <?php }
-                    ?>
                 </tbody>
             </table>
             <!-- {{-- @else
@@ -101,3 +56,68 @@
 
     </div>
 </div>
+
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#datatable').DataTable({
+
+
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ],
+        'destroy': true,
+        'pagging': true,
+        'processing': true,
+        'serverSide': true,
+        'serverMethod': 'post',
+        'ajax': {
+            'url': '../views/donhang/datatable.php',
+
+        },
+        'columns': [{
+                data: 'MaDDH'
+            },
+            {
+                data: 'MaKH'
+            },
+            {
+                data: 'MaNV'
+            },
+            {
+                data: 'NgayLapDDH'
+            },
+            {
+                data: 'NgayGiaoHang'
+            },
+            {
+                data: 'ThanhTien'
+            },
+            {
+                data: 'TrangThai'
+            },
+            {
+                data: 'VAT'
+            },
+            {
+                data: 'CongNo'
+            },
+        ]
+    }).clear();
+});
+
+
+$(document).ready(function() {
+    $('#datatable').DataTable({
+        dom: 'Bfrtip',
+        retrieve: true,
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    });
+});
+</script>

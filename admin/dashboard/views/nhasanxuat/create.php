@@ -8,10 +8,10 @@
                         </path>
                     </svg></a></li>
             <li class="breadcrumb-item">
-                <a href="dashboard.php?controller=vattu">Danh sách vật tư</a>
+                <a href="dashboard.php?controller=vattu">Danh sách nhà sản xuất </a>
             </li>
             <li class="breadcrumb-item">
-                <a href="dashboard.php?controller=vattu&action=add">Thêm vật tư</a>
+                <a href="dashboard.php?controller=vattu&action=add">Thêm nhà sản xuất</a>
             </li>
         </ol>
     </nav>
@@ -23,83 +23,70 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
                 </path>
             </svg>
-            Thêm vật tư
+            Thêm Nhà Sản Xuất
         </a>
     </div>
 </div>
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h4 class="mt-2 font-weight-bold text-primary float-left">Thêm vật tư </h6>
+        <h4 class="mt-2 font-weight-bold text-primary float-left">Thêm Nhà sản xuất</h6>
     </div>
     <div class="row">
         <div class="col-12 mb-4 mx-auto">
             <div class="card">
                 <div class="card-body">
-                    <form method="POST" action="">
+                    <form method="POST" class="needs-validation" action="dashboard.php?controller=nsx&action=addNSX" novalidate>
                         <div class="form-group mb-4">
-                            <label for="}" class="col-form-label">Mã vật tư: </label>
-                            <input class="form-control" type="text" id="" name="" placeholder="" value="" />
-                            <!-- <div class="invalid-feedback"><?php $message ?></div> -->
+                            <label for="}" class="col-form-label">Mã nhà sản xuất: </label>
+                            <input class="form-control" type="text" id="" name="MaNSX" placeholder="Mã nhà sản xuất" value="" required/>
+                            <div class="invalid-feedback">Xin hãy điền vào đây</div>
                         </div>
                         <div class="form-group mb-4">
-                            <label for="}" class="col-form-label">Tên vật tư: </label>
-                            <input class="form-control" type="text" id="" name="" placeholder="" value="" />
-                            <!-- <div class="invalid-feedback"><?php $message ?></div> -->
+                            <label for="}" class="col-form-label">Tên Nhà sản xuất: </label>
+                            <input class="form-control" type="text" id="" name="TenNSX" placeholder="Tên nhà sản xuất" value="" required/>
+                            <div class="invalid-feedback">Xin hãy điền vào đây</div>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <label for="}" class="col-form-label">Giá: </label>
-                                <input class="form-control" type="text" id="" name="" placeholder="" value="" />
-                                <!-- <div class="invalid-feedback"><?php $message ?></div> -->
+                                <label for="}" class="col-form-label">Địa chỉ: </label>
+                                <input class="form-control" type="text" id="" name="DiaChi" placeholder="Địa chỉ" value="" required/>
+                                <div class="invalid-feedback">Xin hãy điền vào đây</div>
                             </div>
-                            <div class="col">
-                                <label for="" class="col-form-label">Đơn vị tính: </label>
-                                <input class="form-control" type="text" id="" name="" placeholder="" value="" />
-                                <!-- <div class="invalid-feedback"><?php $message ?></div> -->
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <label for="" class="col-form-label">Số lượng: </label>
-                                <input class="form-control" type="text" id="" name="" placeholder="" value="" />
-                                <!-- <div class="invalid-feedback"><?php $message ?></div> -->
-                            </div>
-                            <div class="col" style="margin-top: 10px;">
-                                <div class="form-group mb-4">
-                                    <label for="">Nhà sản xuất:</label>
-                                    <select name="" id="" class="form-control">
-                                        <option value="">Chọn nhà sản xuất</option>
-                                        <?php for ($i = 0; $i<10;$i++) {?>
-                                        <option value="$i"><?php echo 'nhà sản xuất '.$i?></option>
-                                        <?php }?>
-                                    </select>
-                                    <!-- <div class="invalid-feedback">{{ $message }}</div> -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="" class="col-form-label">Chọn hình: </label>
-                            <div class="input-group">
-                                <span class="input-group-btn">
-                                    <a id="lfm" data-input="" data-preview="holder"
-                                        class="btn btn-primary" style="z-index: 0">
-                                        <i class="fas fa-upload"></i> Chọn
-                                    </a>
-                                </span>
-                                <input id="" class="form-control" type="text"
-                                    name="" value="" />
-                            </div>
-                            <img id="holder" style="margin-top:15px;max-height:100px;">
-                            <!-- <span class="text-danger">{{ $message }}</span> -->
-                        </div>
-                        <div class="form-group my-3">
-                            <button class="btn btn-success text-white" type="submit">Cập nhật</button>
-                            <button type="reset" class="btn btn-warning text-white">Xoá</button>
+
                         </div>
 
-                    </form>
-                </div>
+                        <div class="form-group my-3">
+                            <button class="btn btn-success text-white" type="submit">Thêm Nhà Sản Xuất</button>
+                            <button type="reset" class="btn btn-warning text-white">Xoá</button>
+                        </div>
+                </form>
             </div>
         </div>
     </div>
 </div>
+</div>
+<script>
+// Disable form submissions if there are invalid fields
+(function() {
+    'use strict';
+    window.addEventListener('load', function() {
+        // Get the forms we want to add validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    }, false);
+})();
+
+function getSDT() {
+    var inputVal = document.getElementById("SDTKH").value;
+    return inputVal;
+}
+</script>

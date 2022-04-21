@@ -1,5 +1,6 @@
 <?php 
 $action=Utilities::get('action', 'index');
+$message ='';
 if($action =='index'){
-    include '../dashboard/body/quanly.php';
+    include '../dashboard/views/donhang/index.php';
 }
