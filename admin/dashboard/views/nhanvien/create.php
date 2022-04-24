@@ -8,98 +8,147 @@
                         </path>
                     </svg></a></li>
             <li class="breadcrumb-item">
-                <a href="dashboard.php?controller=vattu">Danh sách vật tư</a>
+                <a href="dashboard.php?controller=nhanvien">Danh sách nhân viên</a>
             </li>
             <li class="breadcrumb-item">
-                <a href="dashboard.php?controller=vattu&action=add">Thêm vật tư</a>
+                <a href="dashboard.php?controller=nhanvien&action=add">Thêm nhân viên</a>
             </li>
         </ol>
     </nav>
     <div class="dropdown">
-        <a href='dashboard.php?controller=vatu&action=add'
+        <a href='dashboard.php?controller=nhanvien&action=addnv'
             class="btn btn-gray-800 d-inline-flex align-items-center me-2" aria-haspopup="true" aria-expanded="false">
             <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
                 </path>
             </svg>
-            Thêm vật tư
+            Thêm nhân viên
+        </a>
+        <a href='dashboard.php?controller=khachhang&action=addsdt'
+            class="btn btn-gray-800 d-inline-flex align-items-center me-2" aria-haspopup="true" aria-expanded="false">
+            <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
+                </path>
+            </svg>
+            Thêm số điện thoại
         </a>
     </div>
 </div>
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h4 class="mt-2 font-weight-bold text-primary float-left">Thêm vật tư </h6>
+        <h4 class="mt-2 font-weight-bold text-primary float-left">Thêm nhân viên </h6>
     </div>
     <div class="row">
         <div class="col-12 mb-4 mx-auto">
             <div class="card">
                 <div class="card-body">
-                    <form method="POST" action="">
+                    <form method="POST" action="dashboard.php?controller=nhanvien&action=addnv"
+                        class="needs-validation" novalidate>
                         <div class="form-group mb-4">
-                            <label for="}" class="col-form-label">Mã vật tư: </label>
-                            <input class="form-control" type="text" id="" name="" placeholder="" value="" />
-                            <!-- <div class="invalid-feedback"><?php $message ?></div> -->
+                            <label for="makh" class="col-form-label">Mã nhân viên: </label>
+                            <input class="form-control" <?php if(!empty(isset($message))){?>
+                                style="border-color: #E11D48;" <?php }?> type="text" id="MaNV" name="MaNV"
+                                placeholder="Mã nhân viên" value="" pattern="[N][V][0-9]{3}" required />
+                            <div class="invalid-feedback">Đang trống hoặc mã không đúng (ví dụ: NV001)</div>
+                            <?php if(!empty(isset($message))){?>
+                            <div style="width: 100%; margin-top: 0.25rem; font-size: 0.875em; color: #E11D48;">
+                                <?php echo $message ?></div>
+                            <?php } ?>
                         </div>
                         <div class="form-group mb-4">
-                            <label for="}" class="col-form-label">Tên vật tư: </label>
-                            <input class="form-control" type="text" id="" name="" placeholder="" value="" />
-                            <!-- <div class="invalid-feedback"><?php $message ?></div> -->
+                            <label for="validationKhachHangNam" class="col-form-label">Tên nhân viên: </label>
+                            <input class="form-control" type="text" id="TenNV" name="TenNV" placeholder="Tên nhân viên"
+                                value="" required />
+                            <div class="invalid-feedback">Không được bỏ trống tên nhân viên</div>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <label for="}" class="col-form-label">Giá: </label>
-                                <input class="form-control" type="text" id="" name="" placeholder="" value="" />
-                                <!-- <div class="invalid-feedback"><?php $message ?></div> -->
+                                <label for="validationKhachHangNam" class="col-form-label">Giới tính: </label><br>
+                                <input checked="checked" id="gender" name="gender" type="radio" value="Nam" /> Nam
+                                <input style="margin-left: 30px;" id='gender' name="gender" type="radio" value="Nữ" />
+                                Nữ
                             </div>
                             <div class="col">
-                                <label for="" class="col-form-label">Đơn vị tính: </label>
-                                <input class="form-control" type="text" id="" name="" placeholder="" value="" />
-                                <!-- <div class="invalid-feedback"><?php $message ?></div> -->
+                                <label for="validationKhachHangNam" class="col-form-label">Ngày sinh: </label><br>
+                                <input class="form-control" type="date" id="ngaysinh" name="ngaysinh"
+                                    placeholder="Ngày sinh" value="" required />
+                                <div class="invalid-feedback">Không được bỏ trống ngày sinh</div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <label for="" class="col-form-label">Số lượng: </label>
-                                <input class="form-control" type="text" id="" name="" placeholder="" value="" />
-                                <!-- <div class="invalid-feedback"><?php $message ?></div> -->
-                            </div>
-                            <div class="col" style="margin-top: 10px;">
-                                <div class="form-group mb-4">
-                                    <label for="">Nhà sản xuất:</label>
-                                    <select name="" id="" class="form-control">
-                                        <option value="">Chọn nhà sản xuất</option>
-                                        <?php for ($i = 0; $i<10;$i++) {?>
-                                        <option value="$i"><?php echo 'nhà sản xuất '.$i?></option>
-                                        <?php }?>
-                                    </select>
-                                    <!-- <div class="invalid-feedback">{{ $message }}</div> -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="" class="col-form-label">Chọn hình: </label>
-                            <div class="input-group">
-                                <span class="input-group-btn">
-                                    <a id="lfm" data-input="" data-preview="holder"
-                                        class="btn btn-primary" style="z-index: 0">
-                                        <i class="fas fa-upload"></i> Chọn
-                                    </a>
-                                </span>
-                                <input id="" class="form-control" type="text"
-                                    name="" value="" />
-                            </div>
-                            <img id="holder" style="margin-top:15px;max-height:100px;">
-                            <!-- <span class="text-danger">{{ $message }}</span> -->
-                        </div>
-                        <div class="form-group my-3">
-                            <button class="btn btn-success text-white" type="submit">Cập nhật</button>
-                            <button type="reset" class="btn btn-warning text-white">Xoá</button>
                         </div>
 
+                        <div class="row">
+                            <div class="col">
+                                <label for="sdt" class="col-form-label">Số điện thoại: </label>
+                                <input class="form-control" type="tel" id="SDTNV" name="SDTNV"
+                                    placeholder="Số điện thoại" value="" pattern="[0-9]{10}" required />
+                                <div class="invalid-feedback">Đang trống hoặc số điện thoại không đúng</div>
+                            </div>
+                            <div class="col">
+                                <label for="diachi" class="col-form-label ">Địa chỉ: </label>
+                                <input class="form-control" type="text" id="DiaChiNV" name="DiaChiNV"
+                                    placeholder="Địa chỉ" value="" required />
+                                <div class="invalid-feedback">Không được bỏ trống địa chỉ khách hàng</div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="sdt" class="col-form-label">Email: </label>
+                                <input class="form-control" type="email" id="Email" name="Email"
+                                    placeholder="Email nhân viên" value="" required />
+                                <div class="invalid-feedback">Sai định dạng hoặc đăng trống</div>
+                            </div>
+                            <div class="col">
+                                <label for="diachi" class="col-form-label ">Password: </label>
+                                <input class="form-control" type="text" id="Password" name="Password"
+                                    placeholder="Mật khẩu truy cập" value="" required />
+                                <div class="invalid-feedback">Không được bỏ trống</div>
+
+                            </div>
+                            <div class="form-group mb-4">
+                            <label for="validationKhachHangNam" class="col-form-label">Quyền cho nhân viên: </label>
+                            <select name="role" id="role" class="form-control" require>
+                                <option value="nhanvien" selected>Nhân viên</option>
+                                <option value="giamdoc">Giám đốc</option>
+                            </select>
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        </div>
+                        </div>
+                        <div class="form-group my-3">
+                            <button class="btn btn-success text-white" type="submit">Thêm nhân viên</button>
+                            <button type="reset" class="btn btn-warning text-white">Xoá</button>
+                        </div>
+                        
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+// Disable form submissions if there are invalid fields
+(function() {
+    'use strict';
+    window.addEventListener('load', function() {
+        // Get the forms we want to add validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    }, false);
+})();
+
+function getSDT() {
+    var inputVal = document.getElementById("SDTKH").value;
+    return inputVal;
+}
+</script>

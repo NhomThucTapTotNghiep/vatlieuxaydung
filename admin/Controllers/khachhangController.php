@@ -24,7 +24,7 @@ if($action =='addkh'){
         $gioitinh = 1;
     }
     if(empty($khachhang->detail($makh))){
-        $message=$khachhang->themKH($makh,$tenkh,$gioitinh,$diachi,$ghichu);
+        $message1=$khachhang->themKH($makh,$tenkh,$gioitinh,$diachi,$ghichu);
         $khachhang->themSDT($makh, $sdt);
         $dataKH = $khachhang->allKhachHang();
         $khachhang;
@@ -42,7 +42,7 @@ if($action=='addsdt'){
 if($action=='addSdt'){
     $makh = Utilities::post('maKH','');
     $sdt = Utilities::post('SDTKH','');
-    $message = $khachhang->themSDT($makh, $sdt);
+    $message1 = $khachhang->themSDT($makh, $sdt);
     $dataKH = $khachhang->allKhachHang();
     include '../dashboard/views/khachhang/index.php';
 }
@@ -74,7 +74,7 @@ if($action =='updatekh'){
             $message1  = $khachhang->themSDT($makh, $sdt);
         }
     }
-    $message = $khachhang->suaKH($makh,$tenkh,$gioitinh,$diachi,$ghichu);
+    $message1 = $khachhang->suaKH($makh,$tenkh,$gioitinh,$diachi,$ghichu);
     $dataKH = $khachhang->allKhachHang();
     include '../dashboard/views/khachhang/index.php';
 }

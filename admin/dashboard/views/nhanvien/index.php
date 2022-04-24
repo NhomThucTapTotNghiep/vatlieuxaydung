@@ -1,12 +1,15 @@
 <?php 
     $columns = [
-        'id' => 'Mã',
-        'images' => 'Tên vật tư',
-        'title' => 'Hình ảnh',
-        'category' => 'Đơn Vị tính',
-        'price' => 'Đơn giá',
-        'quantity' => 'Số Lượng',
-        'sold' => 'Nhà sản xuất',
+        'MaNV' => 'Mã nhân viên',
+        'TenNV' => 'Tên nhân viên',
+        'born' => 'Ngày sinh',
+        'sex' => 'Giới tính',
+        'address' => 'Địa chỉ',
+        'email' => 'Email',
+        'password' => 'Mật khẩu',
+        'phone' => 'Số điện thoại',
+        'role' => 'Quyền',
+        'chinhsua' => 'Chỉnh sửa'
         ];
 ?>
 
@@ -20,25 +23,34 @@
                         </path>
                     </svg></a></li>
             <li class="breadcrumb-item">
-                <a href="dashboard.php?controller=vattu">Danh sách vật tư</a>
+                <a href="dashboard.php?controller=nhanvien">Danh sách nhân viên</a>
             </li>
         </ol>
     </nav>
     <div class="dropdown">
-        <a href='dashboard.php?controller=vattu&action=add'
+        <a href='dashboard.php?controller=nhanvien&action=add'
             class="btn btn-gray-800 d-inline-flex align-items-center me-2" aria-haspopup="true" aria-expanded="false">
             <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
                 </path>
             </svg>
-            Thêm vật tư
+            Thêm nhân viên
+        </a>
+        <a href='dashboard.php?controller=nhanvien&action=addsdt'
+            class="btn btn-gray-800 d-inline-flex align-items-center me-2" aria-haspopup="true" aria-expanded="false">
+            <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
+                </path>
+            </svg>
+            Thêm số điện thoại
         </a>
     </div>
 </div>
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="mt-2 font-weight-bold text-primary float-left">Danh sách vật tư</h6>
+        <h6 class="mt-2 font-weight-bold text-primary float-left">Danh sách khách hàng</h6>
     </div>
 
     <div class="card-body">
@@ -54,20 +66,27 @@
                 </thead>
                 <tbody>
                     <?php
-                    for($i=0; $i <=20; $i++)
+                    foreach($dataNV as $item)
                     {
                         ?>
                     <tr>
-                        <td><?php echo $i; ?></td>
-                        <td> Tên vật tư</td>
+                        <td><?php echo $item['MaNV']; ?></td>
+                        <td><?php echo $item['TenNV']; ?></td>
+                        <td><?php echo $item['NgaySinh']; ?></td>
+                        <td><?php  if($item['GioiTinh']== '0'){echo 'Nam';} else{echo 'Nữ';} ?></td>
                         <td>
-                            <img src="#" class="img-fluid" style="max-width:80px" alt="">
+                            <?php echo $item['DiaChi']; ?>
                         </td>
-
-                        <td>Đơn vị tính</td>
-                        <td>Giá</td>
-                        <td> Số lượng</td>
-                        <td>Nhà sản xuất</td>
+                        <td> <?php echo $item['Email']; ?></td>
+                        <td> <?php echo $item['Password']; ?></td>
+                        <td>
+                        <?php $sdt = $nhanvien->sdtNhanVien($item['MaNV']);
+                                foreach ($sdt as $tamp){
+                                    echo $tamp['SDT']."<br>" ;
+                                }
+                            ?>
+                        </td>
+                        <td> <?php echo $item['Role']; ?></td>
                         <!-- <td>
                             @if ($product->status == 'active')
                             <span class="badge badge-sm bg-success ms-1">Hiển thị</span>
@@ -75,17 +94,18 @@
                         </td> -->
                         <td class="col-sm-1">
                             <div class="d-flex justify-content-center align-items-center">
-                                <a href="" class="btn btn-primary btn-sm float-left btn-circle" data-toggle="tooltip"
+                                <a href="dashboard.php?controller=nhanvien&action=xem&id=<?php echo $item['MaNV']; ?>" class="btn btn-primary btn-sm float-left btn-circle" data-toggle="tooltip"
                                     title="Xem" data-placement="bottom"><i class="fas fa-info-circle"></i></a>
-                                <a href="dashboard.php?controller=vattu&action=update"
+                                <a href="dashboard.php?controller=nhanvien&action=update&id=<?php echo $item['MaNV']; ?>"
                                     class="btn btn-warning btn-sm float-left mx-2 btn-circle text-white"
                                     data-toggle="tooltip" title="Sửa" data-placement="bottom"><i
                                         class="fas fa-edit"></i></a>
-                                <form method="POST" action="">
+                                <form method="POST" action="dashboard.php?controller=nhanvien&action=delete">
                                     <button type="button" class="btn btn-danger btn-sm btn-circle btnDelete" data-id=""
                                         data-toggle="tooltip" data-placement="bottom" title="Xoá">
                                         <i class="fas fa-trash"></i>
                                     </button>
+                                    <input type="text" id="manv" name="manv" value="<?php echo $item['MaNV']; ?>" hidden>
                                 </form>
                             </div>
                         </td>
@@ -101,3 +121,10 @@
 
     </div>
 </div>
+<?php  
+    include '../dashboard/alert/alert.php'; 
+    if(!empty($message)){
+        echo '<script type="text/javascript">alert();</script>';
+    }       
+
+?>

@@ -23,7 +23,7 @@ if($action =='addvt'){
     // var_dump($mavt,$tenvt,$gia,$mansx,$donvitinh,$soluong, $img);
     if(empty($vattu->detail($mavt))){
         move_uploaded_file($_FILES['hinhVT']['tmp_name'], IMG_SANPHAM.$img);
-        $message=$vattu->themVT($mavt, $tenvt, $img, $donvitinh, $gia, $soluong, $mansx);
+        $message1=$vattu->themVT($mavt, $tenvt, $img, $donvitinh, $gia, $soluong, $mansx);
         $dataVT = $vattu->allVatTu();
         include '../dashboard/views/vattu/index.php';
     }else{
@@ -48,7 +48,7 @@ if($action =='updatevt'){
     $img = basename($_FILES["hinhVT"]["name"]);
     // var_dump($mavt,$tenvt,$gia,$mansx,$donvitinh,$soluong, $img);
     if(empty($img)){
-        $message=$vattu->suaVTkhongHinh($mavt, $tenvt, $donvitinh, $gia, $soluong, $mansx);
+        $message1=$vattu->suaVTkhongHinh($mavt, $tenvt, $donvitinh, $gia, $soluong, $mansx);
         $dataVT = $vattu->allVatTu();
         include '../dashboard/views/vattu/index.php';
     }else{
@@ -58,7 +58,7 @@ if($action =='updatevt'){
             unlink(IMG_SANPHAM.$item['img']);
         };
         move_uploaded_file($_FILES['hinhVT']['tmp_name'], IMG_SANPHAM.$img);
-        $message=$vattu->suaVT($mavt, $tenvt, $img, $donvitinh, $gia, $soluong, $mansx);
+        $message1=$vattu->suaVT($mavt, $tenvt, $img, $donvitinh, $gia, $soluong, $mansx);
         $dataVT = $vattu->allVatTu();
         include '../dashboard/views/vattu/index.php';
     }
