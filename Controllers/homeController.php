@@ -8,5 +8,6 @@ if($action =='index'){
     include 'view/body/mainpage.php';
 }
 if($action =='cart'){
+    $dataVatTu1 = $vattu->random(8);
     include 'view/body/cart.php';
 }

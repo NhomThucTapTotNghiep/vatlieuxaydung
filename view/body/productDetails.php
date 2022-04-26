@@ -38,10 +38,10 @@
             <div class="card_area d-flex justify-content-between align-items-center">
               <div class="product_count">
                 <span class="inumber-decrement"> <i class="ti-minus"></i></span>
-                <input class="input-number" id="soluong" type="text" value="1" min="1" max="100">
+                <input class="input-number" id="soluong" type="number" value="1" min="1" max="100">
                 <span class="number-increment"> <i class="ti-plus"></i></span>
               </div>
-              <input type="button" class="btn_3" onclick="addCart()" value="add to cart">
+              <input type="button" class="btn_3" value="add to cart"  onclick="addCart('<?php echo $chitiet['MaVT']; ?>')">
               <input class="input-number" id="id" type="text" value="<?php echo $chitiet['MaVT'] ?>" min="0" max="100" hidden>
               <a href="#" class="like_us"> <i class="ti-heart"></i> </a>
             </div>

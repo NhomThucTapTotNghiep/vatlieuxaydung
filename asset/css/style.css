@@ -492,7 +492,7 @@
     
     .btn_1 {
         display: inline-block;
-        padding: 9px 42px;
+        padding: 9px 9px;
         border-radius: 50px;
         background-color: #ecfdff;
         font-size: 15px;
@@ -2895,6 +2895,19 @@
         -webkit-transition: 0.5s;
         transition: 0.5s;
     }
+    
+    .single_product_item .single_product_text span {
+        color: #ff3368;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 500;
+        display: block;
+        margin-top: 10px;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+    }
     /* line 93, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_product_list.scss */
     
     .single_product_item .single_product_text a i {
@@ -2916,6 +2929,11 @@
     /* line 109, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_product_list.scss */
     
     .single_product_item:hover a {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .single_product_item:hover span {
         opacity: 1;
         visibility: visible;
     }
