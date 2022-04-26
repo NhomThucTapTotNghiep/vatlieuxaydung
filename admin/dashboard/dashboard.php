@@ -45,6 +45,9 @@ window.location = '../index.php';
         if($controller =='ddh'){
             include '../Controllers/donDHController.php';
         }
+        if($controller =='hd'){
+            include '../Controllers/hoaDonController.php';
+        }
         if($controller =='phieutthu'){
             include '../Controllers/phieuThuControlles.php';
         }

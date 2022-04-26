@@ -1,62 +1,78 @@
 <!-- DataTable -->
 
 <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-   
-    <script type="text/javascript" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
-    
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#datatable1').DataTable({
-                
-              
-                dom: 'Bfrtip',
-                buttons: [
-                    'copy', 'csv', 'excel', 'pdf', 'print'
-                ],
-                'destroy': true,
-                'pagging':true,
-                'processing': true, 
-                'serverSide': true,
-                'serverMethod': 'post',
-                'ajax': {
-                    'url':'./views/donhang/datatable.php',
-                    
-                },
-                'columns': [
-                    { data: 'MaDDH' },
-                    { data: 'MaKH' },
-                    { data: 'MaNV' },
-                    { data: 'NgayLapDDH' },
-                    { data: 'NgayGiaoHang' },
-                    { data: 'ThanhTien' },
-                    { data: 'TrangThai' },
-                    { data: 'VAT' },
-                    { data: 'CongNo' },
-                ]
-           }).clear();
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
-        } );
-        
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
 
-        $(document).ready(function() {
-        $('#datatable1').DataTable( {
-                dom: 'Bfrtip',
-                retrieve: true,
-                'searching':false,
-                buttons: [
-                    'copy', 'csv', 'excel', 'pdf', 'print'
-                ]
-            } );
-        } );
-            
-    </script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#datatable1').DataTable({
+
+
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ],
+        'destroy': true,
+        'pagging': true,
+        'processing': true,
+        'serverSide': true,
+        'serverMethod': 'post',
+        'ajax': {
+            'url': './views/donhang/datatable.php',
+
+        },
+        'columns': [{
+                data: 'MaDDH'
+            },
+            {
+                data: 'MaKH'
+            },
+            {
+                data: 'MaNV'
+            },
+            {
+                data: 'NgayLapDDH'
+            },
+            {
+                data: 'NgayGiaoHang'
+            },
+            {
+                data: 'ThanhTien'
+            },
+            {
+                data: 'TrangThai'
+            },
+            {
+                data: 'VAT'
+            },
+            {
+                data: 'CongNo'
+            },
+        ]
+    }).clear();
+
+});
+
+
+$(document).ready(function() {
+    $('#datatable1').DataTable({
+        dom: 'Bfrtip',
+        retrieve: true,
+        'searching': false,
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    });
+});
+</script>
 
 
 <div class="py-4">
@@ -73,6 +89,17 @@
             </li>
         </ol>
     </nav>
+</div>
+<div class="dropdown" style="margin-bottom: 30px;">
+    <a href='dashboard.php?controller=ddh&action=add' class="btn btn-gray-800 d-inline-flex align-items-center me-2"
+        aria-haspopup="true" aria-expanded="false">
+        <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
+            </path>
+        </svg>
+        Thêm đơn đặt hàng
+    </a>
 </div>
 <div class="card shadow mb-4">
     <div class="card-header py-3">

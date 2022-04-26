@@ -104,7 +104,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="dashboard.php?controller=ddh" class="nav-link">
+                <a href="dashboard.php?controller=hd" class="nav-link">
                     <span class="sidebar-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-xs me-2" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor" stroke-width="2">
