@@ -1,3 +1,5 @@
+<?php foreach($dataPthu as $item) ?>
+
 <div class="py-4">
     <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
         <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
@@ -8,10 +10,10 @@
                         </path>
                     </svg></a></li>
             <li class="breadcrumb-item">
-                <a href="dashboard.php?controller=vattu">Danh sách vật tư</a>
+                <a href="dashboard.php?controller=vattu">Danh sách phiếu thu</a>
             </li>
             <li class="breadcrumb-item">
-                <a href="dashboard.php?controller=vattu&action=update">Cập nhật vật tư</a>
+                <a href="dashboard.php?controller=vattu&action=update">Cập nhật phiếu thu</a>
             </li>
         </ol>
     </nav>
@@ -23,75 +25,68 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
                 </path>
             </svg>
-            Cập nhật vật tư
+            Cập nhật phiếu thu
         </a>
     </div>
 </div>
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h4 class="mt-2 font-weight-bold text-primary float-left">Cập nhật vật tư</h6>
+        <h4 class="mt-2 font-weight-bold text-primary float-left">Cập nhật phiếu thu</h6>
     </div>
     <div class="row">
         <div class="col-12 mb-4 mx-auto">
             <div class="card">
                 <div class="card-body">
-                    <form method="POST" action="">
+                    <form method="POST" action="dashboard.php?controller=phieutthu&action=updatePT">
                         <div class="form-group mb-4">
-                            <label for="}" class="col-form-label">Mã vật tư: </label>
-                            <input class="form-control" type="text" id="" name="" placeholder="" value="" />
+                            <label for="}" class="col-form-label">Mã Phiếu Thu: </label>
+                            <input class="form-control" type="text" id="" name="MaPT" placeholder="" value="<?php echo $item['MaPT'] ?>" />
                             <!-- <div class="invalid-feedback"><?php $message ?></div> -->
                         </div>
                         <div class="form-group mb-4">
-                            <label for="}" class="col-form-label">Tên vật tư: </label>
-                            <input class="form-control" type="text" id="" name="" placeholder="" value="" />
+                            <label for="}" class="col-form-label">Ngày TT: </label>
+                            <input class="form-control" type="text" id="" name="NgayTT" placeholder="" value="<?php echo $item['NgayTT'] ?>" />
                             <!-- <div class="invalid-feedback"><?php $message ?></div> -->
                         </div>
                         <div class="row">
                             <div class="col">
-                                <label for="}" class="col-form-label">Giá: </label>
-                                <input class="form-control" type="text" id="" name="" placeholder="" value="" />
+                                <label for="}" class="col-form-label">Đợt: </label>
+                                <input class="form-control" type="text" id="" name="Dot" placeholder="" value="<?php echo $item['Dot'] ?>" />
                                 <!-- <div class="invalid-feedback"><?php $message ?></div> -->
                             </div>
                             <div class="col">
-                                <label for="" class="col-form-label">Đơn vị tính: </label>
-                                <input class="form-control" type="text" id="" name="" placeholder="" value="" />
+                                <label for="" class="col-form-label">Số tiền TT: </label>
+                                <input class="form-control" type="text" id="" name="SoTienTT" placeholder="" value=<?php echo $item['SoTienTT'] ?> />
                                 <!-- <div class="invalid-feedback"><?php $message ?></div> -->
                             </div>
                         </div>
+                        <div class="form-group mb-4">
+                            <label for="}" class="col-form-label">Mã HD: </label>
+                            <input class="form-control" type="text" id="" name="MaHD" placeholder="" value="<?php echo $item['MaHD'] ?>" />
+                            <!-- <div class="invalid-feedback"><?php $message ?></div> -->
+                        </div>
                         <div class="row">
                             <div class="col">
-                                <label for="" class="col-form-label">Số lượng: </label>
-                                <input class="form-control" type="text" id="" name="" placeholder="" value="" />
+                                <label for="" class="col-form-label">Trạng Thái: </label>
+                                <input class="form-control" type="text" id="" name="TrangThai" placeholder="" value="<?php echo $item['TrangThai'] ?>" />
                                 <!-- <div class="invalid-feedback"><?php $message ?></div> -->
                             </div>
                             <div class="col" style="margin-top: 10px;">
                                 <div class="form-group mb-4">
-                                    <label for="">Nhà sản xuất:</label>
-                                    <select name="" id="" class="form-control">
-                                        <option value="">Chọn nhà sản xuất</option>
-                                        <?php for ($i = 0; $i<10;$i++) {?>
-                                        <option value="$i"><?php echo 'nhà sản xuất '.$i?></option>
+                                    <label for="">Mã NV:</label>
+                                    <select name="MaNV" id="" class="form-control" >
+                                        <option value="">Chọn Mã NV</option>
+                                        <?php foreach($nv as $item)
+                                        {
+                                        ?>
+                                        <option value="<?php echo $item["MaNV"] ?>" ><?php echo $item["MaNV"] ?></option>
                                         <?php }?>
                                     </select>
                                     <!-- <div class="invalid-feedback">{{ $message }}</div> -->
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="" class="col-form-label">Chọn hình: </label>
-                            <div class="input-group">
-                                <span class="input-group-btn">
-                                    <a id="lfm" data-input="" data-preview="holder"
-                                        class="btn btn-primary" style="z-index: 0">
-                                        <i class="fas fa-upload"></i> Chọn
-                                    </a>
-                                </span>
-                                <input id="" class="form-control" type="text"
-                                    name="" value="" />
-                            </div>
-                            <img id="holder" style="margin-top:15px;max-height:100px;">
-                            <!-- <span class="text-danger">{{ $message }}</span> -->
-                        </div> 
+                        
                         <div class="form-group my-3">
                             <button class="btn btn-success text-white" type="submit">Cập nhật</button>
                             <button type="reset" class="btn btn-warning text-white">Xoá</button>

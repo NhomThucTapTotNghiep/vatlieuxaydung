@@ -55,7 +55,7 @@
             include '../Controllers/nsxController.php';
         }
         if($controller =='sdtnsx'){
-            include '../Controllers/nsxController.php';
+            include '../Controllers/sdtNSXController.php';
         }
         if($controller =='nhanvien'){
             include '../Controllers/nhanVienControllers.php';

@@ -1,12 +1,12 @@
 <?php 
 $action=Utilities::get('action', 'index');
 $id=Utilities::get('id', '');
-$nhaSX = new nhaSanXuat();
 $sdt_nsx=new SDTNhaSanXuat();
+$nhaSX = new nhaSanXuat();
+
 if($action =='index'){
-    $dataNSX = $nhaSX->allNSX();
-    $nhaSX;
-    include '../dashboard/views/nhasanxuat/index.php';
+    $dataSDTNSX = $sdt_nsx->allSDTNSX();
+    include '../dashboard/views/SDTNhaSanXuat/index.php';
 }
 if($action =='delete'){
     $maNSX = Utilities::post('maNSX','');
@@ -16,6 +16,8 @@ if($action =='delete'){
     include '../dashboard/views/nhasanxuat/index.php';
 }
 if($action =='add'){
+    $nhasx=$sdt_nsx->layNhanVien();
+    var_dump($nhasx);
     include '../dashboard/views/nhasanxuat/create.php';
 }
 if($action =='addNSX'){
@@ -36,7 +38,7 @@ if($action =='addNSX'){
 }
 if($action =='xem'){
     $dataNSX = $nhaSX->detail($id);
-    include '../dashboard/views/nhasanxuat/detail.php';
+    include '../dashboard/views/nhasanxuat/detail';
 }
 if($action == 'update'){
     $dataNSX = $nhaSX->detail($id);
