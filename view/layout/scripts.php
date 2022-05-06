@@ -37,6 +37,10 @@
 
 <!-- jquery -->
 <script type="text/javascript">
+$(document).ready(function() {
+    
+});
+
 function addCart() {
     var MaVT = document.getElementById('id').value;
     var inputVal = document.getElementById("soluong").value;
@@ -61,7 +65,7 @@ function getInputValue() {
 <script>
 function addCart(mavt) {
     var quantity = $('#soluong').val();
-    if(Number.isInteger(quantity)==false){
+    if (Number.isInteger(quantity) == false) {
         quantity = 1;
     }
     var data = {
@@ -115,5 +119,51 @@ function deleteVatTU(mavt) {
             });
         }
     })
+}
+
+function giamSoLuong(dem, mavt) {
+    var soluong = document.getElementById('cart' + dem).value;
+    var dongia = document.getElementById('cart' + dem + dem).value;
+    var soluongtang = parseInt(soluong) - 1;
+    if (soluongtang > 0) {
+        var tamp = 'cart' + dem;
+        var tongtien = soluongtang * parseInt(dongia);
+        document.getElementById('cart' + dem).setAttribute('value', soluongtang);
+        $('h5#' + tamp).text(tongtien);
+        $.ajax({
+            url: 'Controllers/cartAction.php',
+            type: 'POST',
+            data: {
+                'mavt': mavt,
+                'quantity': soluongtang,
+                'action': 'update'
+            },
+            success: function(result) {
+
+            }
+        });
+    }
+}
+
+function tangSoLuong(dem, mavt) {
+    var soluong = document.getElementById('cart' + dem).value;
+    var dongia = document.getElementById('cart' + dem + dem).value;
+    var soluongtang = parseInt(soluong) + 1;
+    var tamp = 'cart' + dem;
+    var tongtien = soluongtang * parseInt(dongia);
+    document.getElementById('cart' + dem).setAttribute('value', soluongtang);
+    $('h5#' + tamp).text(tongtien);
+    $.ajax({
+        url: 'Controllers/cartAction.php',
+        type: 'POST',
+        data: {
+            'mavt': mavt,
+            'quantity': soluongtang,
+            'action': 'update'
+        },
+        success: function(result) {
+
+        }
+    });
 }
 </script>

@@ -81,15 +81,16 @@
                             </td>
                             <td>
                                 <div class="product_count">
-                                    <span class="input-number-decrement"> <i class="ti-angle-down"></i></span>
-                                    <input class="input-number" id="cart<?php echo $dem; ?>" type="text"
+                                    <span class="input-number-decrement" onclick="giamSoLuong('<?php echo $dem; ?>', '<?php echo $item['MaVT']; ?>')"> <i class="ti-angle-down"></i></span>
+                                    <input id="cart<?php echo $dem; ?>" type="text"
                                         value="<?php echo $item['quantity']; ?>" min="0"
                                         max="<?php echo $item['SoLuong']; ?>">
-                                    <span class="input-number-increment"> <i class="ti-angle-up"></i></span>
+                                    <span class="input-number-increment" onclick="tangSoLuong('<?php echo $dem; ?>', '<?php echo $item['MaVT']; ?>')"> <i class="ti-angle-up"></i></span>
+                                    <input id="cart<?php echo $dem.$dem; ?>" value="<?php echo $item['DonGia']; ?>" hidden>
                                 </div>
                             </td>
                             <td>
-                                <h5><?php echo $item['quantity']*$item['DonGia']; ?></h5>
+                                <h5 id="cart<?php echo $dem; ?>" ><?php echo $item['quantity']*$item['DonGia']; ?></h5>
                             </td>
                             <td>
                                 <a class="btn_1" href="#"><i class="fa fa-refresh" aria-hidden="true"></i></a>
@@ -97,16 +98,7 @@
                             </td>
                         </tr>
                         <?php $dem++;} ?>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <h5>Subtotal</h5>
-                            </td>
-                            <td>
-                                <h5>$2160.00</h5>
-                            </td>
-                        </tr>
+                       
                     </tbody>
                     <?php } ?>
                 </table>

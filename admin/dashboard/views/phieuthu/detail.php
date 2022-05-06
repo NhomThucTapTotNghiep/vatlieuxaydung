@@ -10,10 +10,10 @@
                         </path>
                     </svg></a></li>
             <li class="breadcrumb-item">
-            <a href="dashboard.php?controller=vattu">Danh sách phiếu thu</a>
+                <a href="dashboard.php?controller=vattu">Danh sách phiếu thu</a>
             </li>
             <li class="breadcrumb-item">
-            <a href="dashboard.php?controller=vattu&action=update">Cập nhật phiếu thu</a>
+                <a href="dashboard.php?controller=vattu&action=update">Chi tiet phiếu thu</a>
             </li>
         </ol>
     </nav>
@@ -25,72 +25,68 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
                 </path>
             </svg>
-            Cập nhật phiếu thu
+            Chi tiet phiếu thu
         </a>
     </div>
 </div>
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-    <h4 class="mt-2 font-weight-bold text-primary float-left">Cập nhật phiếu thu</h6>
+        <h4 class="mt-2 font-weight-bold text-primary float-left">Chi tiet phiếu thu</h6>
     </div>
     <div class="row">
         <div class="col-12 mb-4 mx-auto">
             <div class="card">
                 <div class="card-body">
-                <form method="POST" action="dashboard.php?controller=phieutthu&action=updatePT">
+                    <form method="POST" action="dashboard.php?controller=phieutthu&action=updatePT">
                         <div class="form-group mb-4">
-                        <label for="}" class="col-form-label">Mã Phiếu Thu: </label>
-                            <input class="form-control" type="text" id="" name="MaPT" placeholder="" value="<?php echo $item['MaPT'] ?>" />
+                            <label for="}" class="col-form-label">Mã Phiếu Thu: </label>
+                            <input class="form-control" readonly type="text" id="" name="MaPT" placeholder="" value="<?php echo $item['MaPT'] ?>" />
                             <!-- <div class="invalid-feedback"><?php $message ?></div> -->
                         </div>
                         <div class="form-group mb-4">
-                        <label for="}" class="col-form-label">Ngày TT: </label>
-                            <input class="form-control" type="text" id="" name="NgayTT" placeholder="" value="<?php echo $item['NgayTT'] ?>" />
+                            <label for="}" class="col-form-label">Ngày TT: </label>
+                            <input class="form-control" readonly type="text" id="" name="NgayTT" placeholder="" value="<?php echo $item['NgayTT'] ?>" />
                             <!-- <div class="invalid-feedback"><?php $message ?></div> -->
                         </div>
                         <div class="row">
                             <div class="col">
-                            <label for="}" class="col-form-label">Đợt: </label>
-                                <input class="form-control" type="text" id="" name="Dot" placeholder="" value="<?php echo $item['Dot'] ?>" />
+                                <label for="}" class="col-form-label">Đợt: </label>
+                                <input class="form-control" readonly type="text" id="" name="Dot" placeholder="" value="<?php echo $item['Dot'] ?>" />
                                 <!-- <div class="invalid-feedback"><?php $message ?></div> -->
                             </div>
                             <div class="col">
-                            <label for="" class="col-form-label">Số tiền TT: </label>
-                                <input class="form-control" type="text" id="" name="SoTienTT" placeholder="" value=<?php echo $item['SoTienTT'] ?> />
+                                <label for="" class="col-form-label">Số tiền TT: </label>
+                                <input class="form-control" readonly type="text" id="" name="SoTienTT" placeholder="" value=<?php echo $item['SoTienTT'] ?> />
                                 <!-- <div class="invalid-feedback"><?php $message ?></div> -->
                             </div>
                         </div>
                         <div class="form-group mb-4">
                             <label for="}" class="col-form-label">Mã HD: </label>
-                            <input class="form-control" type="text" id="" name="MaHD" placeholder="" value="<?php echo $item['MaHD'] ?>" />
+                            <input class="form-control" readonly type="text" id="" name="MaHD" placeholder="" value="<?php echo $item['MaHD'] ?>" />
                             <!-- <div class="invalid-feedback"><?php $message ?></div> -->
                         </div>
                         <div class="row">
                             <div class="col">
-                            <label for="" class="col-form-label">Trạng Thái: </label>
-                                <input class="form-control" type="text" id="" name="TrangThai" placeholder="" value="<?php echo $item['TrangThai'] ?>" />
+                                <label for="" class="col-form-label">Trạng Thái: </label>
+                                <input class="form-control" readonly type="text" id="" name="TrangThai" placeholder="" value="<?php echo $item['TrangThai'] ?>" />
                                 <!-- <div class="invalid-feedback"><?php $message ?></div> -->
                             </div>
                             <div class="col" style="margin-top: 10px;">
                                 <div class="form-group mb-4">
-                                <label for="">Mã NV:</label>
+                                    <label for="">Mã NV:</label>
                                     <select name="MaNV" id="" class="form-control" >
-                                        <option value="">Chọn Mã NV</option>
-                                        <?php foreach($nv as $item)
-                                        {
-                                        ?>
-                                        <option value="<?php echo $item["MaNV"] ?>" ><?php echo $item["MaNV"] ?></option>
-                                        <?php }?>
+                                        <option value="<?php echo $item['MaNV'] ?>"><?php echo $item['MaNV'] ?></option>
+
                                     </select>
                                     <!-- <div class="invalid-feedback">{{ $message }}</div> -->
                                 </div>
                             </div>
                         </div>
-                      
-                        <div class="form-group my-3">
+
+                        <!-- <div class="form-group my-3">
                             <button class="btn btn-success text-white" type="submit">Cập nhật</button>
                             <button type="reset" class="btn btn-warning text-white">Xoá</button>
-                        </div>
+                        </div> -->
 
                     </form>
                 </div>

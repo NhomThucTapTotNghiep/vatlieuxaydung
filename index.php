@@ -55,7 +55,6 @@
         }
 
         if($controller == 'cart'){
-            //Show products
             include 'Controllers/cartController.php';
         }
 

@@ -35,7 +35,7 @@
 </div>
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="mt-2 font-weight-bold text-primary float-left">Danh sách nhà sản xuất</h6>
+    <h6 class="mt-2 font-weight-bold text-primary float-left">Danh sách nhà san xuat</h6>
     </div>
 
     <div class="card-body">

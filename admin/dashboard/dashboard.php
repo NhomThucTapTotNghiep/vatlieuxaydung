@@ -9,9 +9,11 @@
     spl_autoload_register('loadClass');
     $quantri = new Quantri();
     $_SESSION['test'] = $_SESSION['quantri'];
+    
     // print_r($_SESSION['quantri']);
     
     // print_r($_SESSION['test']);
+    var_dump($_SESSION['role']);
     if (!isset($_SESSION['quantri']))
     {
         ?>

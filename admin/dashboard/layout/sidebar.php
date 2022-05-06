@@ -89,7 +89,7 @@
                     <span class="sidebar-text">Đơn đặt hàng</span>
                 </a>
             </li>
-
+            <?php if($_SESSION['role'] != 'nhanvien'){ ?>
             <li class="nav-item">
                 <a href="dashboard.php?controller=phieutthu" class="nav-link">
                     <span class="sidebar-icon">
@@ -102,7 +102,7 @@
                     <span class="sidebar-text">Phiếu thu</span>
                 </a>
             </li>
-
+            <?php } ?>
             <li class="nav-item">
                 <a href="dashboard.php?controller=hd" class="nav-link">
                     <span class="sidebar-icon">
@@ -164,6 +164,7 @@
                 </a>
             </li>
             <!-- Quản lý số nhân viên -->
+            <?php if($_SESSION['role'] != 'nhanvien'){ ?>
             <li class="nav-item">
                 <a href="dashboard.php?controller=nhanvien" class="nav-link">
                     <span class="sidebar-icon">
@@ -176,6 +177,7 @@
                     <span class="sidebar-text">Nhân viên</span>
                 </a>
             </li>
+            <?php } ?>
             <!-- Quản lý số khách hàng -->
             <li class="nav-item">
                 <a href="dashboard.php?controller=khachhang" class="nav-link">

@@ -5,7 +5,7 @@
     require_once("../class/vatTu.php");
     require_once("../class/Utilities.php");
     $vattu = new vatTu();
-    var_dump($_POST["action"]);
+    // var_dump($_POST["action"]);
     // session_unset();
     // die;
     if($_POST['action'] == 'add'){
@@ -21,5 +21,8 @@
 						unset($_SESSION["cart_item"][$item['MaVT']]);
 			}
 		}
+    };
+    if($_POST['action'] == 'update'){
+        $_SESSION['cart_item'][$_POST['mavt']]["quantity"] = $_POST["quantity"];
     };
 ?>
