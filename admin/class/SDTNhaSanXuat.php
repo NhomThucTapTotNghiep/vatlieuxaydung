@@ -18,13 +18,14 @@ class SDTNhaSanXuat extends Database
 
 
     //them
-    function themNSX($maNSX, $tenNSX, $diachi){
-        $sql_them = "INSERT INTO `nhasanxuat`(`MaNSX`, `TenNSX`, `DiaChi`) 
-                    VALUES (?,?,?)";
-        return $this->updateQuery($sql_them, [$maNSX, $tenNSX, $diachi]);
+
+    function themSDTNSX($maNSX, $SDT){
+        $sql_them = "INSERT INTO `sdt_nsx`(`SDT`, `MaNSX`)
+                    VALUES (?,?)";
+        return $this->updateQuery($sql_them, [$SDT,$maNSX]);
     }
     // function themSDT($makh, $sdt){
-    //     $sql_them = "INSERT INTO `sdt_khachhang`(`MaKH`, `SDT`) 
+    //     $sql_them = "INSERT INTO `sdt_khachhang`(`MaKH`, `SDT`)
     //     VALUES (?,?)";
     //     return $this->updateQuery($sql_them, [$makh, $sdt]);
     // }
@@ -35,15 +36,15 @@ class SDTNhaSanXuat extends Database
         return $this->updateQuery($sql_sua, [$tenNSX, $diachi, $maNSX]);
     }
     // function suaSDT($makh, $sdt){
-    //     $sql_sua = "INSERT INTO `sdt_khachhang`(`MaKH`, `SDT`) 
     //     VALUES (?,?)";
     //     return $this->updateQuery($sql_sua, [$makh, $sdt]);
     // }
 
     //xoa
-    function xoaNSX($id)
+
+    function xoaSDTNSX($id)
     {
-        return $this->updateQuery("DELETE FROM `nhasanxuat` WHERE nhasanxuat.MaNSX = ?", [$id]);
+        return $this->updateQuery("DELETE FROM `sdt_nsx` WHERE sdt_nsx.MaNSX = ?", [$id]);
     }
     // function xoaSDTKH($id)
     // {
@@ -63,3 +64,4 @@ class SDTNhaSanXuat extends Database
     }
 
 } 
+

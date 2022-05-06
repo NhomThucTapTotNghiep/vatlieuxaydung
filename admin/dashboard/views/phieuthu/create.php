@@ -11,7 +11,11 @@
                 <a href="dashboard.php?controller=vattu">Danh sách vật tư</a>
             </li>
             <li class="breadcrumb-item">
+<<<<<<< HEAD
             <a href="dashboard.php?controller=vattu&action=add">Thêm phiếu thu</a>
+=======
+                <a href="dashboard.php?controller=vattu&action=add">Thêm phiếu thu</a>
+>>>>>>> remotes/origin/GiangDev
             </li>
         </ol>
     </nav>
@@ -35,14 +39,22 @@
         <div class="col-12 mb-4 mx-auto">
             <div class="card">
                 <div class="card-body">
+<<<<<<< HEAD
                 <form method="POST" action="dashboard.php?controller=phieutthu&action=addPT">
+=======
+                    <form method="POST" action="dashboard.php?controller=phieutthu&action=addPT">
+>>>>>>> remotes/origin/GiangDev
                         <div class="form-group mb-4">
                             <label for="}" class="col-form-label">Mã phiếu thu: </label>
                             <input class="form-control" type="text" id="" name="MaPT" placeholder="" value="" />
                             <!-- <div class="invalid-feedback"><?php $message ?></div> -->
                         </div>
                         <div class="form-group mb-4">
+<<<<<<< HEAD
                             <label for="}" class="col-form-label">Ngày TT: </label>
+=======
+                            <label for="}" class="col-form-label">ngày TT: </label>
+>>>>>>> remotes/origin/GiangDev
                             <input class="form-control" type="text" id="" name="NgayTT" placeholder="YYYY-MM-DD" value="" />
                             <!-- <div class="invalid-feedback"><?php $message ?></div> -->
                         </div>
@@ -60,16 +72,27 @@
                         </div>
                         <div class="row">
                             <div class="col">
+<<<<<<< HEAD
                                 <label for="" class="col-form-label">Mã Hóa đơn: </label>
+=======
+                                <label for="" class="col-form-label">Ma Hóa đơn: </label>
+>>>>>>> remotes/origin/GiangDev
                                 <input class="form-control" type="text" id="" name="MaHD" placeholder="" value="" />
                                 <!-- <div class="invalid-feedback"><?php $message ?></div> -->
                             </div>
                             <div class="col" style="margin-top: 10px;">
                                 <div class="form-group mb-4">
+<<<<<<< HEAD
                                 <label for="">Ma NV:</label>
                                     <select name="MaNV" id="" class="form-control">
                                         <option value="">Chọn mã nhân viên</option>
 
+=======
+                                    <label for="">Ma NV:</label>
+                                    <select name="MaNV" id="" class="form-control">
+                                        <option value="">Chọn mã nhân viên</option>
+                                        
+>>>>>>> remotes/origin/GiangDev
                                         <?php foreach($nv as $item)
                                         {
                                         ?>
@@ -91,7 +114,11 @@
                         </div>
                        
                         <div class="form-group my-3">
+<<<<<<< HEAD
                         <button class="btn btn-success text-white" type="submit">Lập</button>
+=======
+                            <button class="btn btn-success text-white" type="submit">Lập</button>
+>>>>>>> remotes/origin/GiangDev
                             <button type="reset" class="btn btn-warning text-white">Xoá</button>
                         </div>
 

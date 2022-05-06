@@ -21,12 +21,20 @@
                         </path>
                     </svg></a></li>
             <li class="breadcrumb-item">
+<<<<<<< HEAD
             <a href="dashboard.php?controller=phieuthu">Danh sách phiếu thu</a>
+=======
+                <a href="dashboard.php?controller=vattu">Danh sách phiếu thu</a>
+>>>>>>> remotes/origin/GiangDev
             </li>
         </ol>
     </nav>
     <div class="dropdown">
+<<<<<<< HEAD
     <a href='dashboard.php?controller=phieutthu&action=add'
+=======
+        <a href='dashboard.php?controller=phieutthu&action=add'
+>>>>>>> remotes/origin/GiangDev
             class="btn btn-gray-800 d-inline-flex align-items-center me-2" aria-haspopup="true" aria-expanded="false">
             <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg">
@@ -39,7 +47,11 @@
 </div>
 <div class="card shadow mb-4">
     <div class="card-header py-3">
+<<<<<<< HEAD
     <h6 class="mt-2 font-weight-bold text-primary float-left">Danh sách phiếu thu</h6>
+=======
+        <h6 class="mt-2 font-weight-bold text-primary float-left">Danh sách phiếu thu</h6>
+>>>>>>> remotes/origin/GiangDev
     </div>
 
     <div class="card-body">
@@ -59,13 +71,21 @@
                     {
                         ?>
                     <tr>
+<<<<<<< HEAD
                     <td><?php echo $item['MaPT']; ?></td>
+=======
+                        <td><?php echo $item['MaPT']; ?></td>
+>>>>>>> remotes/origin/GiangDev
                         <td><?php echo $item['NgayTT'] ?></td>
                         <td><?php echo $item['SoTienTT']; ?></td>
                         <td><?php echo $item['Dot'] ?></td>
                         <td><?php echo $item['MaNV']; ?></td>
                         <td><?php echo $item['MaHD'] ?></td>
                         <td><?php echo $item['TrangThai']; ?></td>
+<<<<<<< HEAD
+=======
+                        
+>>>>>>> remotes/origin/GiangDev
                         <!-- <td>
                             @if ($product->status == 'active')
                             <span class="badge badge-sm bg-success ms-1">Hiển thị</span>
@@ -73,6 +93,7 @@
                         </td> -->
                         <td class="col-sm-1">
                             <div class="d-flex justify-content-center align-items-center">
+<<<<<<< HEAD
                             <a href="dashboard.php?controller=phieutthu&action=xem&id=<?php echo $item['MaPT']; ?>" class="btn btn-primary btn-sm float-left btn-circle" data-toggle="tooltip"
                                     title="Xem" data-placement="bottom"><i class="fas fa-info-circle"></i></a>
                                     <a href="dashboard.php?controller=phieutthu&action=update&id=<?php echo $item['MaPT']; ?>"
@@ -80,6 +101,15 @@
                                     data-toggle="tooltip" title="Sửa" data-placement="bottom"><i
                                         class="fas fa-edit"></i></a>
                                         <form method="POST" action="dashboard.php?controller=phieutthu&action=delete">
+=======
+                                <a href="dashboard.php?controller=phieutthu&action=xem&id=<?php echo $item['MaPT']; ?>" class="btn btn-primary btn-sm float-left btn-circle" data-toggle="tooltip"
+                                    title="Xem" data-placement="bottom"><i class="fas fa-info-circle"></i></a>
+                                <a href="dashboard.php?controller=phieutthu&action=update&id=<?php echo $item['MaPT']; ?>"
+                                    class="btn btn-warning btn-sm float-left mx-2 btn-circle text-white"
+                                    data-toggle="tooltip" title="Sửa" data-placement="bottom"><i
+                                        class="fas fa-edit"></i></a>
+                                <form method="POST" action="dashboard.php?controller=phieutthu&action=delete">
+>>>>>>> remotes/origin/GiangDev
                                     <button type="button" class="btn btn-danger btn-sm btn-circle btnDelete" data-id=""
                                         data-toggle="tooltip" data-placement="bottom" title="Xoá">
                                         <i class="fas fa-trash"></i>

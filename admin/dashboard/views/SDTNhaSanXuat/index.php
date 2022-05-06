@@ -1,8 +1,8 @@
-<?php 
+<?php
     $columns = [
-        'id' => 'Mã',
+        'MaNSX' => 'Mã',
         'title' => 'Tên nha san xuat',
-        'address' => 'Đia Chi',
+        'SDT' => 'Số điện thoại',
         "option" => "Tùy chọn"
         ];
 ?>
@@ -22,7 +22,7 @@
         </ol>
     </nav>
     <div class="dropdown">
-        <a href='dashboard.php?controller=nsx&action=add'
+        <a href='dashboard.php?controller=sdtnsx&action=add'
             class="btn btn-gray-800 d-inline-flex align-items-center me-2" aria-haspopup="true" aria-expanded="false">
             <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg">
@@ -44,7 +44,7 @@
                 <thead class="thead-light">
                     <tr>
                         <?php
-                        foreach($columns as $column){ 
+                        foreach($columns as $column){
                         echo  '<th>'.$column.'</th>';
                         }?>
                     </tr>
@@ -57,8 +57,7 @@
                     <tr>
                         <td><?php echo $item['MaNSX']; ?></td>
                         <td><?php echo $item['TenNSX'] ?></td>
-
-                        <td style="width:100px"><?php echo $item['DiaChi'] ?></td>
+                        <td><?php echo $item['SDT'] ?></td>
                         <!-- <td>
                             @if ($product->status == 'active')
                             <span class="badge badge-sm bg-success ms-1">Hiển thị</span>
@@ -66,18 +65,13 @@
                         </td> -->
                         <td class="col-sm-1">
                             <div class="d-flex justify-content-center align-items-center">
-                                <a href="dashboard.php?controller=nsx&action=xem&id=<?php echo $item['MaNSX']; ?>" class="btn btn-primary btn-sm float-left btn-circle" data-toggle="tooltip"
-                                    title="Xem" data-placement="bottom"><i class="fas fa-info-circle"></i></a>
-                                <a href="dashboard.php?controller=nsx&action=update&id=<?php echo $item['MaNSX']; ?>"
-                                    class="btn btn-warning btn-sm float-left mx-2 btn-circle text-white"
-                                    data-toggle="tooltip" title="Sửa" data-placement="bottom"><i
-                                        class="fas fa-edit"></i></a>
-                                <form method="POST" action="dashboard.php?controller=nsx&action=delete">
+                                
+                                <form method="POST" action="dashboard.php?controller=sdtnsx&action=delete">
                                     <button type="button" class="btn btn-danger btn-sm btn-circle btnDelete" data-id=""
                                         data-toggle="tooltip" data-placement="bottom" title="Xoá">
                                         <i class="fas fa-trash"></i>
                                     </button>
-                                    <input type="text" id="maNSX" name="maNSX" value="<?php echo $item['MaNSX']; ?>" hidden>
+                                    <input type="text" id="maNSX" name="MaNSX" value="<?php echo $item['MaNSX']; ?>" hidden>
                                 </form>
                             </div>
                         </td>

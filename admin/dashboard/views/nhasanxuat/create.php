@@ -35,6 +35,7 @@
         <div class="col-12 mb-4 mx-auto">
             <div class="card">
                 <div class="card-body">
+<<<<<<< HEAD
                     <form method="POST" class="needs-validation" action="dashboard.php?controller=nsx&action=addNSX" novalidate>
                         <div class="form-group mb-4">
                             <label for="}" class="col-form-label">Mã nhà sản xuất: </label>
@@ -45,14 +46,38 @@
                             <label for="}" class="col-form-label">Tên Nhà sản xuất: </label>
                             <input class="form-control" type="text" id="" name="TenNSX" placeholder="Tên nhà sản xuất" value="" required/>
                             <div class="invalid-feedback">Xin hãy điền vào đây</div>
+=======
+                    <form method="POST" action="dashboard.php?controller=nsx&action=addNSX">
+                        <div class="form-group mb-4">
+                            <label for="}" class="col-form-label">Mã nhà sản xuất: </label>
+                            <input class="form-control" type="text" id="" name="MaNSX" placeholder="" value="" />
+                            <!-- <div class="invalid-feedback"><?php $message ?></div> -->
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="}" class="col-form-label">Tên Nhà sản xuất: </label>
+                            <input class="form-control" type="text" id="" name="TenNSX" placeholder="" value="" />
+                            <!-- <div class="invalid-feedback"><?php $message ?></div> -->
+>>>>>>> remotes/origin/GiangDev
                         </div>
                         <div class="row">
                             <div class="col">
                                 <label for="}" class="col-form-label">Địa chỉ: </label>
+<<<<<<< HEAD
                                 <input class="form-control" type="text" id="" name="DiaChi" placeholder="Địa chỉ" value="" required/>
                                 <div class="invalid-feedback">Xin hãy điền vào đây</div>
                             </div>
 
+=======
+                                <input class="form-control" type="text" id="" name="DiaChi" placeholder="" value="" />
+                                <!-- <div class="invalid-feedback"><?php $message ?></div> -->
+                            </div>
+                            
+                        </div>
+                       
+                        <div class="form-group my-3">
+                            <button class="btn btn-success text-white" type="submit">Thêm Nhà Sản Xuất</button>
+                            <button type="reset" class="btn btn-warning text-white">Xoá</button>
+>>>>>>> remotes/origin/GiangDev
                         </div>
 
                         <div class="form-group my-3">

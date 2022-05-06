@@ -2,6 +2,7 @@
 $action=Utilities::get('action', 'index');
 $id=Utilities::get('id', '');
 $nhaSX = new nhaSanXuat();
+
 if($action =='index'){
     $dataNSX = $nhaSX->allNSX();
     $nhaSX;
@@ -31,11 +32,12 @@ if($action =='addNSX'){
         $message='Trùng mã khách hàng';
         include '../dashboard/views/nhasanxuat/create.php';
     }
-
+    
 }
 if($action =='xem'){
     $dataNSX = $nhaSX->detail($id);
-    include '../dashboard/views/nhasanxuat/detail';
+    include '../dashboard/views/nhasanxuat/detail.php';
+
 }
 if($action == 'update'){
     $dataNSX = $nhaSX->detail($id);
@@ -45,7 +47,6 @@ if($action =='updateNSX'){
     $maNSX = Utilities::post('MaNSX','');
     $tenNSX = Utilities::post('TenNSX','');
     $diachi = Utilities::post('DiaChi','');
-
     $message = $nhaSX->suaNSX($maNSX,$tenNSX,$diachi);
     $dataNSX = $nhaSX->allNSX();
     include '../dashboard/views/nhasanxuat/index.php';

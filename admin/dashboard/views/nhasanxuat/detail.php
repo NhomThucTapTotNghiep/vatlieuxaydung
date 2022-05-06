@@ -39,7 +39,11 @@
                 <div class="card-body">
                     <form method="POST" action="dashboard.php?controller=nsx&action=updateNSX">
                         <div class="form-group mb-4">
+<<<<<<< HEAD
 
+=======
+                       
+>>>>>>> remotes/origin/GiangDev
                             <label for="}" class="col-form-label">Mã nhà sản xuất: </label>
                             <input class="form-control" readonly type="text" id="" name="MaNSX" placeholder="" value="<?php echo $item['MaNSX'] ?>" />
                             <!-- <div class="invalid-feedback"><?php $message ?></div> -->
@@ -65,4 +69,8 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 </div> 
+=======
+</div>
+>>>>>>> remotes/origin/GiangDev

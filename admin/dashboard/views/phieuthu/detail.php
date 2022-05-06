@@ -76,13 +76,21 @@
                                     <label for="">Mã NV:</label>
                                     <select name="MaNV" id="" class="form-control" >
                                         <option value="<?php echo $item['MaNV'] ?>"><?php echo $item['MaNV'] ?></option>
+<<<<<<< HEAD
 
+=======
+                                        
+>>>>>>> remotes/origin/GiangDev
                                     </select>
                                     <!-- <div class="invalid-feedback">{{ $message }}</div> -->
                                 </div>
                             </div>
                         </div>
+<<<<<<< HEAD
 
+=======
+                        
+>>>>>>> remotes/origin/GiangDev
                         <!-- <div class="form-group my-3">
                             <button class="btn btn-success text-white" type="submit">Cập nhật</button>
                             <button type="reset" class="btn btn-warning text-white">Xoá</button>

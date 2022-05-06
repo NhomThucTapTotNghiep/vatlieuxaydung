@@ -54,7 +54,6 @@ class nhaSanXuat extends Database
     //      return $this->updateQuery("DELETE FROM `sdt_khachhang` WHERE sdt_khachhang.SDT = ? and MaKH = ?", [$sdt, $makh]);
     // }
 
-
     //chi tiet
     function detail($id)
     {
@@ -62,4 +61,5 @@ class nhaSanXuat extends Database
                                     WHERE nhasanxuat.MaNSX = ?", [$id]);
     }
 
-} 
+
+}

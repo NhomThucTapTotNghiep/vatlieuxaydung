@@ -37,6 +37,7 @@
         <div class="col-12 mb-4 mx-auto">
             <div class="card">
                 <div class="card-body">
+<<<<<<< HEAD
                     <form method="POST" action="dashboard.php?controller=nsx&action=updateNSX" class="needs-validation"
                         novalidate>
                         <div class="form-group mb-4">
@@ -57,11 +58,31 @@
                             <div class="invalid-feedback">Không được bỏ trống</div>
                         </div>
 
+=======
+                    <form method="POST" action="dashboard.php?controller=nsx&action=updateNSX">
+                        <div class="form-group mb-4">
+                       
+                            <label for="}" class="col-form-label">Mã nhà sản xuất: </label>
+                            <input class="form-control" type="text" id="" name="MaNSX" placeholder="" value="<?php echo $item['MaNSX'] ?>" />
+                            <!-- <div class="invalid-feedback"><?php $message ?></div> -->
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="}" class="col-form-label">Tên nhà sản xuất: </label>
+                            <input class="form-control" type="text" id="" name="TenNSX" placeholder="" value="<?php echo $item['TenNSX'] ?>" />
+                            <!-- <div class="invalid-feedback"><?php $message ?></div> -->
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="}" class="col-form-label">Địa chỉ: </label>
+                                <input class="form-control" type="text" id="" name="DiaChi" placeholder="" value="<?php echo $item['DiaChi'] ?>" />
+                                <!-- <div class="invalid-feedback"><?php $message ?></div> -->
+                            </div>
+                        </div>
+>>>>>>> remotes/origin/GiangDev
                         <div class="form-group my-3">
                             <button class="btn btn-success text-white" type="submit">Cập nhật</button>
                             <button type="reset" class="btn btn-warning text-white">Xoá</button>
                         </div>
-
                     </form>
                 </div>
             </div>
