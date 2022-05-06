@@ -1,4 +1,4 @@
-<?php 
+<?php
 $action=Utilities::get('action', 'index');
 $id=Utilities::get('id', '');
 $sdt_nsx=new SDTNhaSanXuat();
@@ -9,33 +9,24 @@ if($action =='index'){
     include '../dashboard/views/SDTNhaSanXuat/index.php';
 }
 if($action =='delete'){
-    $maNSX = Utilities::post('maNSX','');
+    $maNSX = Utilities::post('MaNSX','');
     //$message1=$nhaSX->xoaSDTKH($makh);
-    $message2=$nhaSX->xoaNSX($maNSX);
-    $dataNSX = $nhaSX->allNSX();
-    include '../dashboard/views/nhasanxuat/index.php';
+    $message2=$sdt_nsx->xoaSDTNSX($maNSX);
+    $dataSDTNSX = $sdt_nsx->allSDTNSX();
+    include '../dashboard/views/SDTNhaSanXuat/index.php';
 }
 if($action =='add'){
-    $nhasx=$sdt_nsx->layNhanVien();
-    var_dump($nhasx);
-    include '../dashboard/views/nhasanxuat/create.php';
+    $dataSDTNSX = $sdt_nsx->allSDTNSX();
+    include '../dashboard/views/SDTNhaSanXuat/create.php';
 }
-if($action =='addNSX'){
+if($action =='addSDTNSX'){
     $maNSX = Utilities::post('MaNSX','');
-    $tenNSX = Utilities::post('TenNSX','');
-    $diachi = Utilities::post('DiaChi','');
-    if(empty($nhaSX->detail($maNSX))){
-        $message=$nhaSX->themNSX($maNSX,$tenNSX,$diachi);
+    $SDT = Utilities::post('SDT','');
+    $message=$sdt_nsx->themSDTNSX($maNSX,$SDT);
         //$khachhang->themSDT($makh, $sdt);
-        $dataNSX = $nhaSX->allNSX();
-        $khachhang;
-        include '../dashboard/views/nhasanxuat/index.php';
-    }else{
-        $message='Trùng mã khách hàng';
-        include '../dashboard/views/nhasanxuat/create.php';
+        $dataSDTNSX = $sdt_nsx->allSDTNSX();
+        include '../dashboard/views/SDTNhaSanXuat/index.php';
     }
-    
-}
 if($action =='xem'){
     $dataNSX = $nhaSX->detail($id);
     include '../dashboard/views/nhasanxuat/detail';
@@ -48,7 +39,7 @@ if($action =='updateNSX'){
     $maNSX = Utilities::post('MaNSX','');
     $tenNSX = Utilities::post('TenNSX','');
     $diachi = Utilities::post('DiaChi','');
-    
+
     $message = $nhaSX->suaNSX($maNSX,$tenNSX,$diachi);
     $dataNSX = $nhaSX->allNSX();
     include '../dashboard/views/nhasanxuat/index.php';
